@@ -15,15 +15,23 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 { 
-                    from: path.resolve(__dirname, 'node_modules/tui-grid/dist/tui-grid.min.js'),
-                    to: 'js/tui-grid',
+                    from: path.resolve(__dirname, 'node_modules/tui-grid/dist'),
+                    to: 'lib/tui-grid',
                     globOptions: {
                         dot: false,
                         gitignore: false,
                         ignore: ['**/*.LICENSE.txt']
                     }
                 },
-                { from: path.resolve(__dirname, 'node_modules/tui-grid/dist/tui-grid.min.css'), to: 'js/tui-grid' }
+                { 
+                    from: path.resolve(__dirname, 'node_modules/tui-pagination/dist'),
+                    to: 'lib/tui-pagination',
+                    globOptions: {
+                        dot: false,
+                        gitignore: false,
+                        ignore: ['**/*.LICENSE.txt']
+                    }
+                }
             ],
         }),
         new WebpackShellPluginNext({
