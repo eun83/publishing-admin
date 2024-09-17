@@ -23,7 +23,16 @@ body {
     flex-direction: row;
 }
 
-.main-header .navbar-nav .nav-link{
+.main-header .navbar-nav .nav-item {
+    display: block;
+    
+}
+
+.main-header .navbar-nav .nav-item.selected {
+    border-bottom: 1px solid red;
+}
+
+.main-header .navbar-nav .nav-item .nav-link{
     display: block;
     height: 2.5rem;
     padding: .5rem 1rem;
@@ -64,6 +73,7 @@ body {
     right:0px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
+    transition: width 0.3s ease;
 }
 
 .main-sidebar li {
@@ -86,7 +96,7 @@ body {
 
 .folding .main-sidebar {
     width:100px;
-    transition: width 0.3s ease;
+    /* transition: width 0.3s ease; */
 }
 
 .folding .main-sidebar .logo-link .logo-text{

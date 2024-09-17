@@ -10,5 +10,15 @@ $(function(){
         $(this).text('>>');
     }
     return false;
-  })  
+  });
+
+  updateHeaderMenu();
 })
+
+
+function updateHeaderMenu(){
+  let targetPath = location.pathname;
+  let targetLink = $('.main-header .nav-item a[href="'+targetPath+'"');
+  let navItem = targetLink.closest('.nav-item');
+  navItem.addClass('selected');
+}
