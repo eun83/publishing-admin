@@ -44,7 +44,7 @@
         </ul>
       </nav>
       <aside class="main-sidebar">
-        <a class="logo-link" href="/">
+        <a class="logo-link" href="/html/index.html">
           <img src="img/admin_logo.png" alt="Admin Logo" />
           <span class="logo-text">한국석유공사</span>
         </a>
@@ -64,46 +64,42 @@
         <button type="button" class="sidebar_fold"><<</button>
       </aside>
       <div class="content-wrapper">
-        <div class="content-header">adada</div>
-        <div class="content">
-          <div id="grid_tale"></div>
-          <script>
-            const grid = new tui.Grid({
-              el: document.getElementById("grid_tale"),
-              data: [],
-              scrollX: false,
-              scrollY: false,
-              columns: [
-                {
-                  header: "Name",
-                  name: "name",
-                },
-                {
-                  header: "Artist",
-                  name: "artist",
-                },
-                {
-                  header: "Type",
-                  name: "type",
-                },
-                {
-                  header: "Release",
-                  name: "release",
-                },
-                {
-                  header: "Genre",
-                  name: "genre",
-                },
-              ],
-            });
-
-            fetch("./grid_data.json")
-              .then((response) => response.json())
-              .then((data) => {
-                grid.resetData(data);
-              });
-          </script>
+        <div class="content-header">
+          <h1>기록물 철</h1>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">기록물 철</li>
+          </ol>
         </div>
+        <section class="content">
+          <div class="card">
+            <div class="card-body">
+              <div id="grid_tale"></div>
+              <script>
+                const grid1 = new tui.Grid({
+                  el: document.getElementById("grid_tale"),
+                  data: [],
+                  scrollX: false,
+                  scrollY: false,
+                  columns: [
+                    { header: "Name", name: "name"},
+                    { header: "Artist",name: "artist",},
+                    { header: "Type", name: "type" },
+                    { header: "Release", name: "release"},
+                    { header: "Genre", name: "genre" },
+                  ]
+                });
+
+                // dummy datas
+                fetch("./grid_data.json")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    grid1.resetData(data);
+                  });
+              </script>
+            </div>
+            </div>
+          </div>
       </div>
     </div>
   </body>
