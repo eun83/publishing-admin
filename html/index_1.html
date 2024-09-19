@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Admin</title>
+
+    <!--favicon-->
+    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="196x196" href="img/favicon_196.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_32.png" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+
+    <link rel="stylesheet" href="./lib/tui-grid/tui-grid.min.css" />
+
+    <!-- js -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./lib/tui-grid/tui-grid.min.js"></script>
+    <script src="js/common.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="main-header">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="#" class="nav-link">반입/반출</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">특수유형기록물 검색</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">열람</a></li>
+          <li class="nav-item"><a href="/html/index.html" class="nav-link">비전자기록물 검색</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">기록물 폐기 관리</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">시스템 관리</a></li>
+        </ul>
+      </nav>
+      <aside class="main-sidebar">
+        <a class="logo-link" href="/html/index.html">
+          <img src="img/admin_logo.png" alt="Admin Logo" />
+          <span class="logo-text">한국석유공사</span>
+        </a>
+        <div class="sidebar">
+          <ul>
+            <li>
+              <a>비전자기록물 검색</a>
+              <ul>
+                <li><a>철 검색</a></li>
+                <li><a>기록물 검색</a></li>
+                <li><a>기록물 폐기 리스트</a></li>
+                <li><a>반입/반출 신청현황</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <button type="button" class="sidebar_fold"><<</button>
+      </aside>
+      <div class="content-wrapper">
+        <div class="content-header">
+          <h1>기록물 철</h1>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">기록물 철</li>
+          </ol>
+        </div>
+        <section class="content">
+          <div class="card">
+            <div class="card-body">
+              <div id="grid_tale"></div>
+              <script>
+                const grid1 = new tui.Grid({
+                  el: document.getElementById("grid_tale"),
+                  data: [],
+                  scrollX: false,
+                  scrollY: false,
+                  columns: [
+                    { header: "Name", name: "name"},
+                    { header: "Artist",name: "artist",},
+                    { header: "Type", name: "type" },
+                    { header: "Release", name: "release"},
+                    { header: "Genre", name: "genre" },
+                  ]
+                });
+
+                // dummy datas
+                fetch("./grid_data.json")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    grid1.resetData(data);
+                  });
+              </script>
+            </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

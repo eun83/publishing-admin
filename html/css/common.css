@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+/* var() */
+:root {
+  --clr_main: #383c75;
+  --clr_point: #444cb7;
+  --clr_darkgray: #111;
+  --clr_gray: #666;
+  --clr_red: #e84747;
+
+  --clr_bg_gray: #f5f5f5;
+  --clr_bg_point: #ecedf1;
+
+  --clr_font: #222;
+
+  --tran_basic: all .3s ease-in-out;
+}
+
+/* skipmenu */
+.skipmenu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  background-color: var(--clr_darkgray);
+  z-index: 999;
+}
+.skipmenu a {
+  opacity: 0;
+  transform: translate(0, -40px);
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+}
+.skipmenu a:focus {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* layout */
+body {
+  background-color: var(--clr_main);
+}
+.wrap {
+  width: 100%;
+  height: auto;
+}
+.wrap > * {
+  transition: var(--tran_basic);
+}
+.top_header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95px;
+  z-index: 50;
+}
+.header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+.header .logo {
+  flex: 0 0 250px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header .logo img {
+  width: 160px;
+  height: auto;
+  margin-left: 20px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(212deg) brightness(150%) contrast(150%);
+}
+.gnb_wrap {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  background-color: #fff;
+  padding: 0 30px;
+  margin: 15px 15px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+.gnb {
+  display: flex;
+  flex: 1 1 auto;
+}
+.gnb > ul,
+.utile {
+  display: flex;
+  align-items: center;
+}
+.gnb > ul li {
+  padding: 0 40px;
+}
+.gnb > ul li > a {
+  display: block;
+  color: var(--clr_font);
+  font-size: 17px;
+  font-weight: 700;
+  position: relative;
+  line-height: 80px;
+}
+.gnb > ul li > a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--clr_point);
+  transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: var(--tran_basic);
+}
+.gnb > ul li:hover > a::after,
+.gnb > ul li:focus > a::after {
+  transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+  transform-origin: bottom left;
+}

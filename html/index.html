@@ -18,8 +18,9 @@
 
     <!-- css -->
     <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/admin.css" />
-
+    
     <link rel="stylesheet" href="./lib/tui-grid/tui-grid.min.css" />
 
     <!-- js -->
@@ -32,48 +33,117 @@
     <script src="js/common.js"></script>
   </head>
   <body>
-    <div class="wrapper">
-      <nav class="main-header">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a href="#" class="nav-link">반입/반출</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">특수유형기록물 검색</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">열람</a></li>
-          <li class="nav-item"><a href="/html/index.html" class="nav-link">비전자기록물 검색</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">기록물 폐기 관리</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">시스템 관리</a></li>
-        </ul>
-      </nav>
-      <aside class="main-sidebar">
-        <a class="logo-link" href="/html/index.html">
-          <img src="img/admin_logo.png" alt="Admin Logo" />
-          <span class="logo-text">한국석유공사</span>
-        </a>
-        <div class="sidebar">
-          <ul>
-            <li>
-              <a>비전자기록물 검색</a>
+    <div class="skipmenu">
+      <a href="">주메뉴 바로가기</a>
+      <a href="">본문 바로가기</a>
+    </div>
+    <div class="wrap">
+      <header class="top_header">
+        <div class="header">
+          <h1 class="logo">
+            <a href="">
+              <img src="images/admin_logo.svg" alt="로고이미지">
+              <span class="hide">한국석유공사</span>
+            </a>
+          </h1>
+
+          <div class="gnb_wrap">
+            <nav class="gnb">
+              <h2 class="hide">메뉴</h2>
               <ul>
-                <li><a>철 검색</a></li>
-                <li><a>기록물 검색</a></li>
-                <li><a>기록물 폐기 리스트</a></li>
-                <li><a>반입/반출 신청현황</a></li>
+                <li><a href="" class="nav-link">반입/반출</a></li>
+                <li><a href="" class="nav-link">특수유형기록물 검색</a></li>
+                <li><a href="" class="nav-link">열람</a></li>
+                <li><a href="/html/index.html" class="nav-link">비전자기록물 검색</a></li>
+                <li><a href="" class="nav-link">기록물 폐기 관리</a></li>
+                <li><a href="" class="nav-link">시스템 관리</a></li>
               </ul>
-            </li>
-          </ul>
+            </nav>
+            
+            <div class="utile">
+              <button type="button" class="notice_msg">
+                <span class="hide">알림메세지</span>
+                <span class="ntc_msg">10</span>
+              </button>
+              <a href="" class="btn_logout">
+                <span>LOGOUT</span>
+              </a>
+            </div>
+          </div>
         </div>
-        <button type="button" class="sidebar_fold"><<</button>
+      </header>
+
+      <aside class="left_sidebar">
+        <ul>
+          <li>
+            <a href="">비전자기록물</a>
+            <ul>
+              <li>
+                <a href="">비전자기록물 검색</a>
+                <ul>
+                  <li><a href="">철 검색</a></li>
+                  <li><a href="">기록물 검색</a></li>
+                  <li><a href="">기록물 폐기 리스트</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <button type="button" class="sidebar_fold">
+          <span class="hide">메뉴 열기</span>
+        </button>
       </aside>
-      <div class="content-wrapper">
-        <div class="content-header">
-          <h1>기록물 철</h1>
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">기록물 철</li>
+
+      <div class="content_wrap">
+        <div class="content_title">
+          <h3 class="page_title">페이지 타이틀</h3>
+          <ol class="page_breadcrumb">
+            <li>HOME</li>
+            <li><a href="">1depth</a></li>
+            <li><a href="">2depth</a></li>
+            <li><a href="">3depth</a></li>
           </ol>
         </div>
-        <section class="content">
-          <div class="card">
-            <div class="card-body">
+
+        <div class="content">
+          <div class="area_title">
+            <h4 class="left_group">
+              <span>조회결과</span>
+              <span>
+                총 건수: <span class="num">10</span> 건
+              </span>
+            </h4>
+            <div class="right_group">
+              <div class="type_grp">
+                <label class="hide">적용건수 선택</label>
+                <select class="">
+                  <option value="">전체</option>
+                  <option value="">10건</option>
+                  <option value="">100건</option>
+                </select>
+              </div>
+              <div class="type_grp">
+                <button type="button" class="">열람신청</button>
+                <button type="button" class="">반출신청</button>
+              </div>
+              <div class="type_grp">
+                <button type="button" class="">철표지 출력</button>
+                <button type="button" class="">선택 라벨지 출력</button>
+                <button type="button" class="">전체 라벨지 출력</button>
+              </div>
+              <div class="type_grp"></div>
+                <button type="button" class="">테이블 설정</button>
+              </div>
+              <div class="type_grp"></div>
+                <button type="button" class="">양식다운로드</button>
+                <button type="button" class="">엑셀다운로드</button>
+                <button type="button" class="">엑셀업로드</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid_board">
+            <div class="">
               <div id="grid_tale"></div>
               <script>
                 const grid1 = new tui.Grid({
@@ -98,9 +168,14 @@
                   });
               </script>
             </div>
-            </div>
+            <!-- 페이지네이션 달아주세용 -->
           </div>
+
+        </div>
+
       </div>
-    </div>
+
+
+    </div>    
   </body>
 </html>
