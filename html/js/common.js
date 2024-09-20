@@ -1,13 +1,13 @@
 
 $(function(){
-  $('.sidebar_fold').click(function(){
+  $('.btn_left_tgl').click(function(){
     let body = $('body');
     if(body.hasClass('folding')){
         body.removeClass('folding');
-        $(this).text('<<');
+        // $(this).text('<<');
     } else {
         body.addClass('folding');
-        $(this).text('>>');
+        // $(this).text('>>');
     }
     return false;
   });
