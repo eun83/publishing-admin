@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/admin.css" />
     
     <link rel="stylesheet" href="./lib/tui-grid/tui-grid.min.css" />
+    <link rel="stylesheet" href="./lib/tui-pagination/tui-pagination.min.css" />
 
     <!-- js -->
     <script
@@ -30,6 +31,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="./lib/tui-grid/tui-grid.min.js"></script>
+    <script src="./lib/tui-pagination/tui-pagination.min.js"></script>
     <script src="js/common.js"></script>
   </head>
   <body>
@@ -154,6 +156,7 @@
             <div class="grid_board">
               <div class="">
                 <div id="grid_tale"></div>
+                <div id="grid_pagination" class="tui-pagination"></div>
                 <script>
                   const grid1 = new tui.Grid({
                     el: document.getElementById("grid_tale"),
@@ -174,6 +177,11 @@
                     .then((response) => response.json())
                     .then((data) => {
                       grid1.resetData(data);
+                      var pagination1 = new tui.Pagination('grid_pagination', {
+                          totalItems: 500,
+                          itemsPerPage: 10,
+                          visiblePages: 5
+                      });
                     });
                 </script>
               </div>
