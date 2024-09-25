@@ -168,11 +168,24 @@ body {
 .gnb {
   display: flex;
   flex: 1 1 auto;
+  max-width: calc(100% - 170px);
 }
 .gnb > ul {
+  width: 80%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0 80px;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1439px) {
+  .gnb > ul {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .gnb > ul {
+    width: 95%;
+  }
 }
 .gnb > ul li > a {
   display: block;
@@ -350,6 +363,7 @@ body {
 .folding .left_dp2 > li > a,
 .folding .left_dp3 > li > a {
   font-size: 0;
+  color: rgba(255,255,255,0);
   padding-left: 0;
   padding-right: 0;
   transition: var(--tran_basic);
