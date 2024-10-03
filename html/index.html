@@ -32,8 +32,8 @@
     ></script>
     <script src="./lib/tui-grid/tui-grid.min.js"></script>
     <script src="./lib/tui-pagination/tui-pagination.min.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/debug.js"></script>
+    <script src="./js/common.js"></script>
+    <!-- 퍼블리싱 편의용 나중에 삭제 --><script src="./js/debug.js"></script><!-- 퍼블리싱 편의용 나중에 삭제 -->
   </head>
   <body>
     <div class="skipmenu">
@@ -53,12 +53,12 @@
             <nav class="gnb">
               <h2 class="hide">메뉴</h2>
               <ul>
-                <li><a href="#" class="nav-link">Header 1Depth</a></li>
-                <li><a href="#" class="nav-link">1Depth</a></li>
-                <li><a href="#" class="nav-link">1Depth</a></li>
-                <li><a href="/html/index.html" class="nav-link">1Depth</a></li>
-                <li><a href="#" class="nav-link">1Depth</a></li>
-                <li><a href="#" class="nav-link">1Depth</a></li>
+                <li><a href="#">A (1Depth)</a></li>
+                <li><a href="#">B (1Depth)</a></li>
+                <li><a href="#">C (1Depth)</a></li>
+                <li><a href="/html/index.html">D (1Depth)</a></li>
+                <li><a href="#">E (1Depth)</a></li>
+                <li><a href="#">F (1Depth)</a></li>
               </ul>
             </nav>            
             <div class="utile">
@@ -110,70 +110,70 @@
             <div class="m_gnb">
               <ul class="m_gnb_dp1">
                 <li class="expand">
-                  <a href="#">1 Depth</a>
+                  <a href="#">A (1 Depth)</a>
                   <ul class="m_gnb_dp2">
                     <li class="expand">
-                      <a href="#">2 Depth</a>
+                      <a href="#">AA (2 Depth)</a>
                       <ul class="m_gnb_dp3">
-                        <li><a href="#">3Depth</a></li>
-                        <li><a href="#">3Depth</a></li>
-                        <li><a href="#">3Depth</a></li>
+                        <li><a href="#">AAA (3 Depth)</a></li>
+                        <li><a href="#">AAB (3 Depth)</a></li>
+                        <li><a href="#">AAC (3 Depth)</a></li>
                       </ul>
                     </li>
                     <li class="">
-                      <a href="#">2Depth</a>
+                      <a href="#">AB (2 Depth)</a>
                     </li>
                     <li class="expand">
-                      <a href="#">2Depth</a>
+                      <a href="#">AC (2 Depth)</a>
                       <ul class="m_gnb_dp3">
-                        <li><a href="#">3Depth</a></li>
-                        <li><a href="#">3Depth</a></li>
+                        <li><a href="/html/index.html">ACA (3 Depth)</a></li>
+                        <li><a href="#">ACB (3 Depth)</a></li>
                       </ul>
                     </li>                    
                   </ul>
                 </li>
                 <li class="expand">
-                  <a href="#">1 Depth</a>
+                  <a href="#">B (1 Depth)</a>
                   <ul class="m_gnb_dp2">
                     <li class="on expand">
-                      <a href="#">2 Depth</a>
+                      <a href="#">BA (2 Depth)</a>
                       <ul class="m_gnb_dp3">
-                        <li><a href="#">3Depth</a></li>
-                        <li><a href="#">3Depth</a></li>
-                        <li><a href="#">3Depth</a></li>
+                        <li><a href="#">BAA (3 Depth)</a></li>
+                        <li><a href="#">BAB (3 Depth)</a></li>
+                        <li><a href="#">BAC (3 Depth)</a></li>
                       </ul>
                     </li>
                     <li class="">
-                      <a href="#">2Depth</a>
+                      <a href="#">BB (2 Depth)</a>
                     </li>
                     <li class="expand">
-                      <a href="#">2Depth</a>
+                      <a href="#">BC (2 Depth)</a>
                       <ul class="m_gnb_dp3">
-                        <li><a href="#">3Depth</a></li>
-                        <li><a href="#">3Depth</a></li>
+                        <li><a href="#">BCA (3 Depth)</a></li>
+                        <li><a href="#">BCB (3 Depth)</a></li>
                       </ul>
                     </li>                    
                   </ul>
                 </li>
                 <li class="expand">
-                  <a href="#">1 Depth</a>
+                  <a href="#">C (1 Depth)</a>
                   <ul class="m_gnb_dp2">
                     <li class="on expand">
-                      <a href="#">2 Depth</a>
+                      <a href="#">CA (2 Depth)</a>
                       <ul class="m_gnb_dp3">
-                        <li><a href="#">3Depth</a></li>
-                        <li><a href="#">3Depth</a></li>
-                        <li><a href="#">3Depth</a></li>
+                        <li><a href="#">CAA (3 Depth)</a></li>
+                        <li><a href="#">CAB (3 Depth)</a></li>
+                        <li><a href="#">CAC (3 Depth)</a></li>
                       </ul>
                     </li>
                     <li class="">
-                      <a href="#">2Depth</a>
+                      <a href="#">CB (2 Depth)</a>
                     </li>
                     <li class="expand">
-                      <a href="#">2Depth</a>
+                      <a href="#">CC (2 Depth)</a>
                       <ul class="m_gnb_dp3">
-                        <li><a href="#">3Depth</a></li>
-                        <li><a href="#">3Depth</a></li>
+                        <li><a href="#">CCA (3 Depth)</a></li>
+                        <li><a href="#">CCB (3 Depth)</a></li>
                       </ul>
                     </li>                    
                   </ul>
@@ -191,10 +191,10 @@
           <li>
             <a href="#">1Depth 비전자</a>
             <ul class="left_dp2">
-              <li>
-                <a href="#" class="on">2Depth 기록물 검색</a>
+              <li class="on" >
+                <a href="#">2Depth 기록물 검색</a>
                 <ul class="left_dp3">
-                  <li><a href="#" class="on">3Depth</a></li>
+                  <li><a href="/html/index.html">3Depth</a></li>
                   <li><a href="#">3Depth</a></li>
                   <li><a href="#">3Depth</a></li>
                 </ul>

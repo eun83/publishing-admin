@@ -30,7 +30,7 @@ $(function(){
       if(me.parent().hasClass('on')){
         me.parent().removeClass('on');
       } else {
-        $('.m_gnb .on').removeClass('on');
+        //$('.m_gnb .on').removeClass('on');
         me.parent().addClass('on');
       }
       return false;
@@ -38,16 +38,41 @@ $(function(){
   })
 
   updateHeaderMenu();
+  updateLeftbMenu();
+  updateGnbMenu();
 })
 
 
 function updateHeaderMenu(){
   let targetPath = location.pathname;
-  let targetLink = $('.main-header .nav-item a[href="'+targetPath+'"');
+  let targetLink = $('.gnb a[href="'+targetPath+'"');
   if(targetLink.length){
-    let navItem = targetLink.closest('.nav-item');
-    navItem.addClass('active');
+    let closest = targetLink.closest('li');
+    closest.addClass('on');
   } else {
     console.debug('haeder menu not found.')
+  }
+}
+
+function updateLeftbMenu(){
+  let targetPath = location.pathname;
+  let targetLink = $('.left_frame ul li a[href="'+targetPath+'"');
+  if(targetLink.length){
+    targetLink.addClass('on');
+    let closest = targetLink.closest('.m_gnb');
+    targetLink.parentsUntil(closest).filter('li').addClass('on');
+  } else {
+    console.debug('left menu not found.')
+  }
+}
+
+function updateGnbMenu(){
+  let targetPath = location.pathname;
+  let targetLink = $('.m_gnb ul li a[href="'+targetPath+'"');
+  if(targetLink.length){
+    let closest = targetLink.closest('.m_gnb');
+    targetLink.parentsUntil(closest).filter('li').addClass('on');
+  } else {
+    console.debug('gnb menu not found.')
   }
 }

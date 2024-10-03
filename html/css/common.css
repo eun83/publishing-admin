@@ -249,7 +249,8 @@ body {
   color: var(--clr_font);
 }
 .gnb > ul li:hover > a,
-.gnb > ul li:focus > a {
+.gnb > ul li:focus > a,
+.gnb > ul li.on > a {
   color: var(--clr_point);
 }
 .gnb > ul li > a::after {
@@ -267,7 +268,8 @@ body {
   transform-origin: bottom left;
 }
 .gnb > ul li:hover > a::after,
-.gnb > ul li:focus > a::after {
+.gnb > ul li:focus > a::after,
+.gnb > ul li.on > a::after {
   transform: scaleX(1);
   -webkit-transform: scaleX(1);
   transform-origin: bottom left;
@@ -378,7 +380,8 @@ body {
   transition: var(--tran_basic);
   transform-origin: center left;
 }
-.left_menu .left_dp2 > li > a.on::before,
+.left_menu .left_dp2 > li.on > a::before, /* 수정안 */
+/* .left_menu .left_dp2 > li > a.on::before, 원안 */
 .left_menu .left_dp2 > li > a:hover::before {
   transform: scaleX(1);
   -webkit-transform: scaleX(1);
@@ -730,6 +733,10 @@ body {
 .m_gnb .m_gnb_dp2 .expand > a::after {
   top: 11px;
   border-width: 1px;
+}
+
+.m_gnb .on > a {
+  color: black !important;
 }
 .m_gnb .on.expand > a::after {
   top: 30px;
