@@ -12,6 +12,16 @@ $(function(){
     return false;
   });
 
+  // 모바일 메뉴 열기
+  $('.m_btn_menu').click(function(){
+    $('.top_frame .m_menu').addClass('open');
+  });
+
+  // 모바일 메뉴 닫기
+  $('.m_btn_x').click(function(){
+    $('.top_frame .m_menu').removeClass('open');
+  })
+
   updateHeaderMenu();
 })
 
