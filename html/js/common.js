@@ -22,6 +22,21 @@ $(function(){
     $('.top_frame .m_menu').removeClass('open');
   })
 
+  // 모바일 메뉴 토글
+  $('.m_gnb a').click(function(){
+    var me = $(this);
+    var href = me.attr('href');
+    if(href == '' || href == '#'){
+      if(me.parent().hasClass('on')){
+        me.parent().removeClass('on');
+      } else {
+        $('.m_gnb .on').removeClass('on');
+        me.parent().addClass('on');
+      }
+      return false;
+    }
+  })
+
   updateHeaderMenu();
 })
 
