@@ -59,8 +59,8 @@ ul {
 }
 /* reset custermize */
 body {
-  width: 100%;
   overflow-x: hidden;
+  width: 100%;
   font-weight: 400;
   font-family: 'SUIT', 'Apple SD Gothic Neo', Arial, sans-serif;
 }
@@ -72,15 +72,28 @@ fieldset {
   padding: 0;
   border: none;
 }
+select {
+  padding: 2px 22px 2px 10px;
+  border-radius: 3px;
+  border-color: var(--clr_darkgray);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10.81 6.11'%3E%3Cpath d='M10.46.35 5.4 5.4.35.35' data-name='Layer_1' style='fill:none;stroke:%23666;stroke-miterlimit:10'/%3E%3C/svg%3E") no-repeat;
+  background-size: 10px 6px;
+  background-position: center right 7px;
+  font-weight: 600;
+  font-size: 14px;
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  appearance: none;
+}
 .hide {
   visibility: hidden;
   overflow: hidden;
   position: absolute;
   top: -1px;
   left: -1px;
+  z-index: -1;
   width: 1px;
   height: 1px;
   font-size: 0;
   line-height: 0;
-  z-index: -1;
 }
