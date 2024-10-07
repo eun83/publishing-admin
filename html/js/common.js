@@ -30,7 +30,10 @@ $(function(){
       if(me.parent().hasClass('on')){
         me.parent().removeClass('on');
       } else {
-        //$('.m_gnb .on').removeClass('on');
+        // top menu 클릭한 경우 기존에 메뉴 닫기
+        if(me.closest('ul').hasClass('m_gnb_dp1')){
+          $('.m_gnb .on').removeClass('on');
+        } 
         me.parent().addClass('on');
       }
       return false;
