@@ -231,17 +231,102 @@
           </div>
         
           <div class="content">
+
+            <div class="con_area">
+              <div class="search_wrap">
+                <ul>
+                  <li>
+                    <p>철 제목</p>
+                    <div class="rowbox">
+                      <input type="text" placeholder="제목을 입력해주세요.">
+                    </div>
+                  </li>
+                  <li>
+                    <p>철 제목 추가검색</p>
+                    <div class="rowbox">
+                      <input type="text" placeholder="제목을 입력해주세요.">
+                    </div>
+                  </li>
+                  <li class="col_2cell">
+                    <p>생산기관</p>
+                    <div class="rowbox select_input_box">
+                      <label class="hide">생산년도 선택</label>
+                      <select class="" required>
+                        <option value="" disabled selected>전체</option>
+                        <option value="">10건</option>
+                        <option value="">100건</option>
+                      </select>
+                      <input type="text" placeholder="처리과를 입력해주세요.">
+                    </div>
+                  </li>
+                  <li>
+                    <p>생산년도</p>
+                    <div class="rowbox date_box">
+                      <input type="text" placeholder="달력">
+                      <span>~</span>
+                      <input type="text" placeholder="달력">
+                    </div>
+                  </li>
+                  <li>
+                    <p>관리번호</p>
+                    <div class="rowbox">
+                      <input type="text" placeholder="readonly">
+                    </div>
+                  </li>
+                  <li class="col_2cell">
+                    <p>보존기간</p>
+                    <div class="rowbox check_box">
+                      <input type="checkbox" id="check_01" class="check_def">
+                      <label for="check_01">체크박스1</label>
+                      <input type="checkbox" id="check_02" class="check_def">
+                      <label for="check_02">체크박스2</label>
+                      <input type="checkbox" id="check_03" class="check_def">
+                      <label for="check_03">체크박스3</label>
+                      <input type="checkbox" id="check_04" class="check_def">
+                      <label for="check_04">체크박스4</label>
+                      <input type="checkbox" id="check_05" class="check_def">
+                      <label for="check_05">체크박스5</label>
+                    </div>
+                  </li>
+                  <li>
+                    <p>박스위치</p>
+                    <div class="rowbox">
+                      <input type="text" placeholder="비활성 disabled">
+                    </div>
+                  </li>
+                  <li>
+                    <p>반출여부</p>
+                    <div class="rowbox">
+                      <label class="hide">생산년도 선택</label>
+                      <select class="" required>
+                        <option value="" disabled selected>전체</option>
+                        <option value="">10건</option>
+                        <option value="">100건</option>
+                      </select>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="srch_btn">
+                  <div class="type_grp">
+                    <button type="button" class="btn_def btn_point_clr">조회</button>
+                    <button type="button" class="btn_def btn_red_clr">초기화</button>
+                  </div>
+                </div>
+              </div>              
+            </div>
+
             <div class="area_title">
-              <h4 class="left_group">
+              <h4 class="left_grp">
                 <span class="sub_title">조회결과</span>
                 <span class="sub_script">
                   총 건수: <span class="num">10</span>건
                 </span>
               </h4>
-              <div class="right_group">
+              <div class="right_grp btn_grp">
                 <div class="type_grp">
                   <label class="hide">적용건수 선택</label>
-                  <select class="select_def">
+                  <select class="select_round">
                     <option value="">전체</option>
                     <option value="">10건</option>
                     <option value="">100건</option>
@@ -252,20 +337,20 @@
                   <button type="button" class="btn_def btn_main_clr">반출신청</button>
                 </div>
                 <div class="type_grp">
-                  <button type="button" class="btn_def btn_darkgray">철표지 출력</button>
-                  <button type="button" class="btn_def btn_darkgray">선택 라벨지 출력</button>
-                  <button type="button" class="btn_def btn_darkgray">전체 라벨지 출력</button>
+                  <button type="button" class="btn_def btn_darkgray">철표지 출력<i class="icon_print"></i></button>
+                  <button type="button" class="btn_def btn_darkgray">선택 라벨지 출력<i class="icon_print"></i></button>
+                  <button type="button" class="btn_def btn_darkgray">전체 라벨지 출력<i class="icon_print"></i></button>
                 </div>
                 <div class="type_grp">
-                  <button type="button" class="btn_def btn_gray">테이블 설정</button>
+                  <button type="button" class="btn_def btn_gray">테이블 설정<i class="icon_setting"></i></button>
                 </div>
                 <div class="type_grp">
-                  <button type="button" class="btn_def btn_line_black">양식다운로드</button>
-                  <button type="button" class="btn_def btn_line_black">엑셀다운로드</button>
-                  <button type="button" class="btn_def btn_line_black">엑셀업로드</button>
+                  <button type="button" class="btn_def btn_line_black">양식다운로드<i class="icon_down_01"></i></button>
+                  <button type="button" class="btn_def btn_line_black">엑셀다운로드<i class="icon_down_02"></i></button>
+                  <button type="button" class="btn_def btn_line_black">엑셀업로드<i class="icon_up"></i></button>
                 </div>
               </div>
-            </div>
+            </div>           
         
             <div class="grid_board">
               <div class="">
@@ -300,6 +385,34 @@
                 </script>
               </div>
               <!-- 페이지네이션 달아주세용 -->
+            </div>
+
+            <div class="btn_grp">
+              <div class="type_grp">
+                <label class="hide">적용건수 선택</label>
+                <select class="">
+                  <option value="">전체</option>
+                  <option value="">10건</option>
+                  <option value="">100건</option>
+                </select>
+              </div>
+              <div class="type_grp">
+                <button type="button" class="btn_def btn_point_clr">열람신청</button>
+                <button type="button" class="btn_def btn_main_clr">반출신청</button>
+              </div>
+              <div class="type_grp">
+                <button type="button" class="btn_def btn_darkgray">철표지 출력<i class="icon_print"></i></button>
+                <button type="button" class="btn_def btn_darkgray">선택 라벨지 출력<i class="icon_print"></i></button>
+                <button type="button" class="btn_def btn_darkgray">전체 라벨지 출력<i class="icon_print"></i></button>
+              </div>
+              <div class="type_grp">
+                <button type="button" class="btn_def btn_gray">테이블 설정<i class="icon_setting"></i></button>
+              </div>
+              <div class="type_grp">
+                <button type="button" class="btn_def btn_line_black">양식다운로드<i class="icon_down_01"></i></button>
+                <button type="button" class="btn_def btn_line_black">엑셀다운로드<i class="icon_down_02"></i></button>
+                <button type="button" class="btn_def btn_line_black">엑셀업로드<i class="icon_up"></i></button>
+              </div>
             </div>
         
           </div>
