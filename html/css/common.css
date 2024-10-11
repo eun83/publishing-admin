@@ -577,23 +577,23 @@ body {
 }
 .type_grp {
   position: relative;
-  padding-left: 14px;
-}
-.type_grp:first-child {
-  padding-left: 0;
+  padding-right: 14px;
 }
 .type_grp::before {
   content: '';
   display: block;
   position: absolute;
   top: calc(50% - 8px);
-  left: 0;
+  right: 0;
   width: 2px;
   height: 16px;
   background-repeat: no-repeat;
   background-image: var(--icon_dot);
 }
-.type_grp:first-child::before {
+.type_grp.type_single {
+  padding-right: 0;
+}
+.type_grp.type_single::before {
   display: none;
 }
 
@@ -840,6 +840,10 @@ body {
     flex-wrap: wrap;
     width: 100%;
     gap: 2px 5px;
+    padding-right: 0;
+  }
+  .type_grp::before {
+    display: none;
   }
 }
 

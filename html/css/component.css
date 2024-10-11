@@ -42,11 +42,17 @@
 /* button */
 .btn_grp {
   display: flex;
+  flex-wrap: wrap;
   margin: 5px 0;
   gap: 6px 12px;
 }
-.btn_center {
+.btn_center,
+.btn_center .type_single {
   justify-content: center;
+}
+.btn_right,
+.btn_right .type_single {
+  justify-content: flex-end;
 }
 .btn_def {
   display: inline-flex;
@@ -323,11 +329,18 @@ p.is_req::after {
 .table_wrap table td:first-child {
   border-left: 0;
 }
-
-/* 권한관리 */
-.management td:first-child {
+/* align_center : 모든 셀 가운데 정렬 */
+table.align_center {
   text-align: center;
 }
+
+.table_wrap table img {
+  object-fit: contain;
+  min-width: 120px;
+  max-height: 28px;
+  margin: 0 auto;
+}
+
 
 
 
