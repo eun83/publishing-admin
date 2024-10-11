@@ -344,6 +344,10 @@ table.align_center {
 
 
 
+.tui-grid-header {
+  background-color: #0f0707; /* 원하는 색상으로 변경 */
+  color: #ffffff; /* 텍스트 색상 변경 (선택 사항) */
+}
 
 
 
