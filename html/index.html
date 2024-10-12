@@ -36,6 +36,7 @@
     <script src="./lib/tui-grid/tui-grid.min.js"></script>
     <script src="./lib/tui-pagination/tui-pagination.min.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/tui.js"></script>
     <!-- 퍼블리싱 편의용 나중에 삭제 --><script src="./js/debug.js"></script><!-- 퍼블리싱 편의용 나중에 삭제 -->
   </head>
   <body>
@@ -502,96 +503,8 @@
                       { header: "Genre", name: "genre" },
                     ]
                   });
-                  tui.Grid.applyTheme('default' , {
-                    // // 그리드 바깥 선
-                    outline: {
-                      border: '#bbbbbb',
-                      // 바깥 세로 선 여부
-                      showVerticalBorder: true,
-                    },
-                    // // 선택된 영역
-                    // selection: {
-                    //   background: "#1eed11",
-                    //   border: '#bbbbbb', 
-                    // },
-                    // // 스크롤바
-                    // scrollbar:{
-                    //   border: 'rgb(205,205,205)',
-                    //   background: 'rgb(248,248,248)',
-                    //   // 스크롤 빈 부분 색상
-                    //   emptySpace: 'rgb(240,240,240)',
-                    //   // 스크롤 부분 색상
-                    //   thumb: 'rgb(205,205,205)',
-                    //   // 마우스오버, 클릭할 때 색상
-                    //   active: 'rgb(70,70,70)'
-                    // },
-                    // 고정 컬럼
-                    // frozenBorder:{
-                    //   border: 'rgb(233,233,233)',
-                    // },
-                    // // 열
-                    // row: {
-                    //   // 마우스 호버
-                    //   hover: {
-                    //     background: '#e9f8e8',
-                    //   },
-                    //   // 비활성화
-                    //   dummy: {
-                    //     background: '#f5d1ba',
-                    //   },
-                    // },
-                    // 각셀
-                    cell: {
-                      // 상단 제목 열
-                      header: {
-                        background: 'rgb(236, 237, 241)',
-                        border: 'rgb(170, 170, 170)',
-                        // text: 'black',
-                        // showVerticalBorder: true,
-                        // showHorizontalBorder: true,
-                      },
-                      normal: {
-                        background: 'rgb(255, 255, 255)',
-                        border: 'rgb(222, 222, 222)',
-                        // text: 'black',
-                        // showVerticalBorder: true,
-                        // showHorizontalBorder: true,
-                      },
-                      // // 선택한 제목 색상
-                      // selectedHeader: {
-                      //   background: 'rgb(233, 233, 233)',
-                      // },
-                      // // 좌측 제목 행
-                      // rowHeader: {
-                      //   background: 'rgb(233, 233, 233)',
-                      //   border: '#bbbbbb',
-                      //   text: 'black',
-                      //   showVerticalBorder: true,
-                      //   showHorizontalBorder: true,
-                      // },
-                      // // 선택한 열 색상
-                      // selectedRowHeader: {
-                      //   background: 'rgb(233, 233, 233)',
-                      // },
-                      // // 선택한 셀
-                      // focused: {
-                      //   background: "#f5d1ba",
-                      //   border: "#bbbbbb",   
-                      // },
-                      // // 선택 후 표 바깥을 선택하면 나타나는 색상
-                      // focusedInactive: {
-                      //     border: "#bbbbbb"
-                      // },
-                      // // 요약 열
-                      // summary: {
-                      //   background: '#f1f5ff',
-                      //   border: '#bbbbbb',
-                      //   text: 'black',
-                      //   showVerticalBorder: true,
-                      //   showHorizontalBorder: true,
-                      // }
-                    }
-                  });
+                  tuiGridApplyTheme();
+                  
                   // dummy datas
                   fetch("./grid_data.json")
                     .then((response) => response.json())
