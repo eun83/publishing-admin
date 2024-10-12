@@ -62,7 +62,7 @@
                 <li><a href="#">C (1Depth)</a></li>
                 <li><a href="/html/index.html">D (1Depth)</a></li>
                 <li><a href="#">E (1Depth)</a></li>
-                <li><a href="#">F (1Depth)</a></li>
+                <li><a href="/html/grid.html">F (1Depth)</a></li>
               </ul>
             </nav>            
             <div class="utile">
@@ -240,22 +240,25 @@
               <script>
                 const grid1 = new tui.Grid({
                   el: document.getElementById("grid_tale"),
-                  data: [],
-                  scrollX: false,
+                  scrollX: true,
                   scrollY: false,
-                  theme: {
-                    presetName: "striped", // default, striped, clean
-                  },
                   columns: [
-                    { header: "Name", name: "name"},
-                    { header: "Artist",name: "artist",},
+                    // minWidth : 최소 사이즈
+                    // whiteSpace : text-warp 대응 
+                    // - nowrap, pre, pre-wrap
+                    { header: "Name", name: "name", minWidth: 100, whiteSpace: 'pre-wrap'},
+                    { header: "Artist",name: "artist", minWidth: 100, }, 
                     { header: "Type", name: "type" },
                     { header: "Release", name: "release"},
-                    { header: "Genre", name: "genre" },
-                  ]
+                    { header: "Genre", name: "genre"},
+                  ],
+                  columnOptions: {
+                    resizable: true,  // 셀 사이즈 변경 기능
+                    minWidth: 80      // 최
+                  }
                 });
                 tuiGridApplyTheme();
-
+                
                 // dummy datas
                 fetch("./grid_data.json")
                   .then((response) => response.json())
