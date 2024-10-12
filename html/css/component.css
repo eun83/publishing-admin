@@ -333,7 +333,7 @@ p.is_req::after {
 table.align_center {
   text-align: center;
 }
-
+/* 테이블 내 이미지 사이즈 설정 */
 .table_wrap table img {
   object-fit: contain;
   min-width: 120px;
@@ -341,9 +341,22 @@ table.align_center {
   margin: 0 auto;
 }
 
+/* row_table 행 테이블 */
+.table_wrap .row_table th {
+  min-width: 140px;
+  text-align: left;
+  padding: 8px 20px;
+  border-bottom: 1px solid #dcdcdc;
+}
+.table_wrap .row_table td {
+  min-width: 150px;
+}
+.table_wrap .row_table tr:last-child th,
+.table_wrap .row_table tr:last-child td {
+  border-bottom: 0;
+}
 
-
-
+/* tui grid tabel */
 .tui-grid-header {
   background-color: #0f0707; /* 원하는 색상으로 변경 */
   color: #ffffff; /* 텍스트 색상 변경 (선택 사항) */
