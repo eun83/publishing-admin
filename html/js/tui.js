@@ -40,14 +40,14 @@ function getCustomExtOpts(_theme){
         // },
         // // 스크롤바
         scrollbar:{
-          //border: clr_main,
-          //background: 'rgb(248,248,248)',
+          border: 'red',
+          background: 'blue',
           // 스크롤 빈 부분 색상
-          //emptySpace: 'rgb(240,240,240)',
+          emptySpace: 'green',
           // 스크롤 부분 색상
-          //thumb: 'rgb(205,205,205)',
+          thumb: 'yellow',
           // 마우스오버, 클릭할 때 색상
-          //active: 'rgb(70,70,70)'
+          active: 'cyan'
         },
         // 고정 컬럼
         // frozenBorder:{
@@ -87,13 +87,13 @@ function getCustomExtOpts(_theme){
             //   background: 'rgb(233, 233, 233)',
             // },
             // // 좌측 제목 행
-            // rowHeader: {
-            //   background: 'rgb(233, 233, 233)',
-            //   border: '#bbbbbb',
-            //   text: 'black',
-            //   showVerticalBorder: true,
-            //   showHorizontalBorder: true,
-            // },
+            rowHeader: {
+              background: clr_bg_point,
+              border: 'rgb(222, 222, 222)',
+              text: 'red',
+              showVerticalBorder: true,
+              showHorizontalBorder: true,
+            },
             // // 선택한 열 색상
             // selectedRowHeader: {
             //   background: 'rgb(233, 233, 233)',
