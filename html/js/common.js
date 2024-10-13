@@ -40,6 +40,17 @@ $(function(){
     }
   })
 
+  // model area toggle
+  $('.model_btn[model_target]').click(function(){
+    var model_target = $(this).attr('model_target');
+    if(model_target != ''){
+      console.debug(model_target);
+      const target = $(model_target);
+      target.toggleClass('on');
+      return false;
+    }
+  });
+
   updateHeaderMenu();
   updateLeftbMenu();
   updateGnbMenu();

@@ -77,18 +77,21 @@
 /* scrollbar */
 .work_frame::-webkit-scrollbar,
 .left_menu::-webkit-scrollbar,
-.m_gnb::-webkit-scrollbar {
+.m_gnb::-webkit-scrollbar,
+.msg_pop_list::-webkit-scrollbar {
   width: 5px;
 }
 .work_frame::-webkit-scrollbar-thumb,
 .left_menu::-webkit-scrollbar-thumb,
-.m_gnb::-webkit-scrollbar-thumb {
+.m_gnb::-webkit-scrollbar-thumb,
+.msg_pop_list::-webkit-scrollbar-thumb {
   background: rgba(170,170,170,.5);
   border-radius: 50px;
 }
 .work_frame::-webkit-scrollbar-track,
 .left_menu::-webkit-scrollbar-track,
-.m_gnb::-webkit-scrollbar-track {
+.m_gnb::-webkit-scrollbar-track,
+.msg_pop_list::-webkit-scrollbar-track {
   background: rgba(255,255,255,0);
 }
 
@@ -368,6 +371,67 @@ body {
   background-repeat: no-repeat;
   background-image: var(--icon_logout);
 }
+/* notice_msg pop */
+.notice_msg_pop {
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--tran_basic);
+  position: absolute;
+  top: 20%;
+  right: 40px;
+  max-width: 300px;
+  height: auto;  
+  padding: 15px 10px 15px 15px;
+  background-color: rgba(68,68,68, .25) ;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+}
+.notice_msg_pop.on {
+  visibility: visible;
+  opacity: 1;
+  top: calc(100% - 15px);
+}
+.msg_pop_list {
+  padding-right: 5px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.msg_pop_list li {
+  position: relative;
+  font-size: 14px;
+  line-height: 15px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 15px;
+  word-break: keep-all;
+  border: 1px solid #aaa;
+}
+.msg_pop_list li:first-child {
+  margin-top: 0;
+}
+.msg_pop_list .msg_title {
+  width: calc(100% - 60px);
+  font-weight: 600;
+  line-height: 15px;
+}
+.msg_pop_list .msg_title .msg_time {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  text-align: end;
+  width: 60px;
+  font-size: 11px;
+  color: #bbb;
+}
+.msg_pop_list .msg_text {
+  width: 100%;
+  margin-top: 10px;
+  color: #666;
+}
+/* left menu */
 .left_menu {
   overflow: hidden;
   overflow-y: auto;  
@@ -633,6 +697,10 @@ body {
   }
 
   /* header */
+  .notice_msg_pop,
+  .notice_msg_pop.on {
+    display: none;
+  }
   .m_header {
     display: flex;
     align-items: center;
