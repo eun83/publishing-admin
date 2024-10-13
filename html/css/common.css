@@ -107,6 +107,7 @@
   background: rgba(255,255,255,0);
 }
 .tui-grid-container{
+  font-family: 'SUIT', 'Apple SD Gothic Neo', Arial, sans-serif;
   scrollbar-3dlight-color:transparent;
   scrollbar-darkshadow-color:transparent;
   scrollbar-track-color:transparent;

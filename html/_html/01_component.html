@@ -19,13 +19,13 @@
     -->
 
     <!-- css -->
+    <link rel="stylesheet" href="../lib/tui-grid/tui-grid.min.css" />
+    <link rel="stylesheet" href="../lib/tui-pagination/tui-pagination.min.css" />
+
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/component.css" />
     <link rel="stylesheet" href="../css/admin.css" />
-    
-    <link rel="stylesheet" href="../lib/tui-grid/tui-grid.min.css" />
-    <link rel="stylesheet" href="../lib/tui-pagination/tui-pagination.min.css" />
 
     <!-- js -->
     <script
@@ -602,16 +602,31 @@
 
       <!-- 알림(경고) 창 -->
       <div class="dialog">
+        <!-- 기본 알림말 -->
         <div class="dialog_pop type_info">
-          <p>알림말이 나옵니다.</p>
+          <p>
+            알림말이 나옵니다.
+          </p>
           <button type="button" class="btn_x" >
             <span class="hide">닫기</span>
             <i class="icon_x"></i>
           </button>
         </div>
-
+        <!-- 성공한 알림말 -->
         <div class="dialog_pop type_success">
-          <p><i class="icon_success"></i>알림말이 나옵니다.</p>
+          <p>
+            <span>성공한 알림말이 나옵니다.</span>
+          </p>
+          <button type="button" class="btn_x">
+            <span class="hide">닫기</span>
+            <i class="icon_x"></i>
+          </button>
+        </div>
+        <!-- 에러 알림말 -->
+        <div class="dialog_pop type_error">
+          <p>
+            <span>에러 알림말이 나옵니다.</span>
+          </p>
           <button type="button" class="btn_x">
             <span class="hide">닫기</span>
             <i class="icon_x"></i>

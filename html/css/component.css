@@ -43,8 +43,8 @@
 .btn_grp {
   display: flex;
   flex-wrap: wrap;
-  margin: 5px 0;
   gap: 6px 12px;
+  margin: 5px 0;
 }
 .btn_center,
 .btn_center .type_single {
@@ -65,8 +65,8 @@
   transition: var(--tran_basic);
 }
 .btn_def:hover {
-  transition: var(--tran_basic);
   opacity: .85;
+  transition: var(--tran_basic);
 }
 .btn_gray {
   background-color: var(--clr_gray);
@@ -115,9 +115,9 @@
 /* grid display */
 .search_wrap ul {
   display: grid;
+  gap: 20px 40px;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-flow: dense;
-  gap: 20px 40px;
 }
 .search_wrap .col_2cell {
   grid-column: auto / span 2;
@@ -358,8 +358,8 @@ table.align_center {
 /* dialog : 알림(경고)창 */
 .dialog {
   position: absolute;
-  bottom: 65px;
   left: 50%;
+  bottom: 100px;
   z-index: 999;
   width: 100%;
   max-width: 500px;
@@ -368,20 +368,43 @@ table.align_center {
 }
 .dialog .dialog_pop {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  gap: 0 10px;
   width: 100%;
   min-height: 50px;
+  margin-top: 20px;
   padding: 10px 22px;
   border-radius: 5px;
   background-color: #ccc;
   color: #fff;
-  gap: 0 10px;
+  -webkit-box-shadow: 0px 8px 14px -9px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 8px 14px -9px rgba(0, 0, 0, 1);
+  box-shadow: 0px 8px 14px -9px rgba(0, 0, 0, 1);
+}
+.dialog .dialog_pop:first-child {
+  margin-top: 0;
 }
 .dialog .dialog_pop p {
+  display: flex;
   flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
   font-size: 15px;
   line-height: 18px;
+}
+.dialog .dialog_pop p::before {
+  content: '';
+  display: block;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+}
+.dialog .dialog_pop p span {
+  flex: 1 1 calc(100% - 34px);
 }
 .dialog .dialog_pop .btn_x {
   flex: 0 0 21px;
@@ -396,7 +419,21 @@ table.align_center {
 .dialog .type_info {
   background-color: var(--clr_main);
 }
-
+.dialog .type_info p::before {
+  display: none;
+}
+.dialog .type_success {
+  background-color: var(--clr_point);
+}
+.dialog .type_success p::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer_1'%3E%3Ccircle cx='12' cy='12' r='12' style='fill:%23fff'/%3E%3Cpath d='m17.51 7.96-8.07 8.08-3.9-3.91' style='fill:none;stroke:%23444cb7;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px'/%3E%3C/g%3E%3C/svg%3E");
+}
+.dialog .type_error {
+  background-color: var(--clr_red);
+}
+.dialog .type_error p::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer_1'%3E%3Ccircle cx='12' cy='12' r='12' style='fill:%23fff'/%3E%3Cpath d='M12 5.73v7.55' style='fill:none;stroke:%23e84747;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px'/%3E%3Cpath d='M12 17.81v.18' style='stroke-width:2px;fill:none;stroke:%23e84747;stroke-linecap:round;stroke-miterlimit:10'/%3E%3C/g%3E%3C/svg%3E");
+}
 
 /* ---------- respond ---------- */
 
