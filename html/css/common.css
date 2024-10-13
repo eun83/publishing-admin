@@ -95,6 +95,26 @@
   background: rgba(255,255,255,0);
 }
 
+/* tui-grid */
+.tui-grid-container ::-webkit-scrollbar{
+  width: 5px;
+}
+.tui-grid-container ::-webkit-scrollbar-thumb{
+  background: rgba(170,170,170,.5);
+  border-radius: 50px;
+}
+.tui-grid-container ::-webkit-scrollbar-track{
+  background: rgba(255,255,255,0);
+}
+.tui-grid-container{
+  scrollbar-3dlight-color:transparent;
+  scrollbar-darkshadow-color:transparent;
+  scrollbar-track-color:transparent;
+  scrollbar-shadow-color:transparent;
+  scrollbar-face-color:rgba(170,170,170,.5);
+  scrollbar-highlight-color:rgba(170,170,170,.5);
+  scrollbar-arrow-color:#ddd
+}
 
 /* skipmenu */
 .skipmenu a {

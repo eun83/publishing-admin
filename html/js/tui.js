@@ -40,14 +40,14 @@ function getCustomExtOpts(_theme){
         // },
         // // 스크롤바
         scrollbar:{
-          border: 'red',
-          background: 'blue',
+          //border: 'transparent',
+          //background: 'transparent',
           // 스크롤 빈 부분 색상
-          emptySpace: 'green',
+          //emptySpace: 'transparent',
           // 스크롤 부분 색상
-          thumb: 'yellow',
+          //thumb: 'rgba(170,170,170,.5)',
           // 마우스오버, 클릭할 때 색상
-          active: 'cyan'
+          //active: 'transparent'
         },
         // 고정 컬럼
         // frozenBorder:{
