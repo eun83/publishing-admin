@@ -247,7 +247,7 @@
                     rowHeaders: ['checkbox'],
                     columns: [
                       { name: "column1", header: "생산년도", sortable: true, width: 80, align: 'center' },
-                      { name: "column2", header: "제목", sortable: true, align: 'left' , whiteSpace: 'pre-wrap'}, 
+                      { name: "column2", header: "제목", sortable: true, minWidth : 180, align: 'left' }, 
                       { name: "column3", header: "관리번호", sortable: true, width: 160, align: 'center' },
                       { name: "column4", header: "부서명", sortable: true, align: 'center' },
                       { name: "column5", header: "반출여부", sortable: true, width: 80,  align: 'center' },
@@ -267,11 +267,9 @@
                       itemsPerPage: 10,
                       visiblePages: 5
                   });
-
                   grid1.resetData(grid_data_sample.slice(0, 10));
                 });
               </script>
-              
             </div>
 
             <div class="grid_board">
@@ -283,7 +281,7 @@
                 $(function(){
                   const grid2 = new tui.Grid({
                     el: document.getElementById("grid_tale2"),
-                    scrollX: false,
+                    scrollX: true,
                     scrollY: false,
                     header: {
                       height:90,
@@ -326,7 +324,6 @@
                   grid2.resetData(grid_data_sample2.slice(0, 10));
                 });
               </script>
-              <!-- 페이지네이션 달아주세용 -->
             </div>
           </div>
         </div>

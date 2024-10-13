@@ -116,6 +116,31 @@
   scrollbar-arrow-color:#ddd
 }
 
+/* tui-pagination */
+.tui-pagination .tui-page-btn{
+  border: 0px !important;
+  border-radius: 3px;
+}
+
+.tui-pagination .tui-page-btn.tui-first:not(.tui-is-disabled),
+.tui-pagination .tui-page-btn.tui-last:not(.tui-is-disabled),
+.tui-pagination .tui-page-btn.tui-prev:not(.tui-is-disabled),
+.tui-pagination .tui-page-btn.tui-next:not(.tui-is-disabled) {
+  border: 1px solid #666 !important;
+}
+
+.tui-pagination .tui-page-btn.tui-first{
+  margin-right:3px;
+}
+
+.tui-pagination .tui-page-btn.tui-last{
+  margin-left:3px;
+}
+
+.tui-pagination .tui-page-btn.tui-is-selected{
+  background-color: #222;
+}
+
 /* skipmenu */
 .skipmenu a {
   display: flex;
