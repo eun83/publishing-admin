@@ -51,6 +51,10 @@ $(function(){
     }
   });
 
+  $('.dialog_pop .btn_x').click(function(){
+    $(this).closest('.dialog_pop').remove();
+  });
+
   updateHeaderMenu();
   updateLeftbMenu();
   updateGnbMenu();

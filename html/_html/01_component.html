@@ -537,36 +537,31 @@
               <div class="">
                 <div id="grid_tale"></div>
                 <div id="grid_pagination" class="tui-pagination"></div>
+                <!-- 퍼블리싱 더미 데이터 - 나중에 삭제 -->
+                <script src="../test/grid_data_sample.js"></script>
+                <!-- 퍼블리싱 더미 데이터 - 나중에 삭제 -->
                 <script>
                   const grid1 = new tui.Grid({
                     el: document.getElementById("grid_tale"),
-                    data: [],
-                    scrollX: false,
+                    scrollX: true,
                     scrollY: false,
-                    theme: {
-                      presetName: "striped", // default, striped, clean
-                    },
+                    rowHeaders: ['checkbox'],
                     columns: [
-                      { header: "Name", name: "name"},
-                      { header: "Artist",name: "artist",},
-                      { header: "Type", name: "type" },
-                      { header: "Release", name: "release"},
-                      { header: "Genre", name: "genre" },
-                    ]
+                      { name: "column1", header: "생산년도", sortable: true, width: 80, align: 'center' },
+                      { name: "column2", header: "제목", sortable: true, minWidth : 180, align: 'left' }, 
+                      { name: "column3", header: "관리번호", sortable: true, width: 160, align: 'center' },
+                      { name: "column4", header: "부서명", sortable: true, align: 'center' },
+                      { name: "column5", header: "반출여부", sortable: true, width: 80,  align: 'center' },
+                      { name: "column6", header: "박스위치", sortable: true, align: 'center' },
+                      { name: "column7", header: "보존기간", sortable: true, width: 80, align: 'center' },
+                    ],
+                    columnOptions: {
+                      resizable: true,
+                      minWidth: 80 
+                    }
                   });
                   tuiGridApplyTheme();
-                  
-                  // dummy datas
-                  fetch("./grid_data.json")
-                    .then((response) => response.json())
-                    .then((data) => {
-                      grid1.resetData(data);
-                      var pagination1 = new tui.Pagination('grid_pagination', {
-                          totalItems: 500,
-                          itemsPerPage: 10,
-                          visiblePages: 5
-                      });
-                    });
+                  grid1.resetData(grid_data_sample.slice(0, 10));
                 </script>
               </div>
             </div>
@@ -609,7 +604,7 @@
       <div class="dialog">
         <div class="dialog_pop type_info">
           <p>알림말이 나옵니다.</p>
-          <button type="button" class="btn_x">
+          <button type="button" class="btn_x" >
             <span class="hide">닫기</span>
             <i class="icon_x"></i>
           </button>
