@@ -116,10 +116,25 @@
   scrollbar-arrow-color:#ddd
 }
 
+.tui-grid-container table th {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  background-color: var(--clr_bg_point);
+}
+.tui-grid-container table td {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  background-color: #fff;
+}
+
 /* tui-pagination */
 .tui-pagination .tui-page-btn{
   border: 0px !important;
   border-radius: 3px;
+  font-weight: 700 !important;
+  margin-right:3px;
 }
 
 .tui-pagination .tui-page-btn.tui-first:not(.tui-is-disabled),
@@ -127,14 +142,6 @@
 .tui-pagination .tui-page-btn.tui-prev:not(.tui-is-disabled),
 .tui-pagination .tui-page-btn.tui-next:not(.tui-is-disabled) {
   border: 1px solid #666 !important;
-}
-
-.tui-pagination .tui-page-btn.tui-first{
-  margin-right:3px;
-}
-
-.tui-pagination .tui-page-btn.tui-last{
-  margin-left:3px;
 }
 
 .tui-pagination .tui-page-btn.tui-is-selected{
