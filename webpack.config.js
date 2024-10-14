@@ -31,6 +31,24 @@ module.exports = {
                         gitignore: false,
                         ignore: ['**/*.LICENSE.txt']
                     }
+                },
+                { 
+                    from: path.resolve(__dirname, 'node_modules/tui-date-picker/dist'),
+                    to: 'lib/tui-date-picker',
+                    globOptions: {
+                        dot: false,
+                        gitignore: false,
+                        ignore: ['**/*.LICENSE.txt']
+                    }
+                },
+                { 
+                    from: path.resolve(__dirname, 'node_modules/tui-time-picker/dist'),
+                    to: 'lib/tui-time-picker',
+                    globOptions: {
+                        dot: false,
+                        gitignore: false,
+                        ignore: ['**/*.LICENSE.txt']
+                    }
                 }
             ],
         }),
