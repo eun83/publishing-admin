@@ -92,13 +92,24 @@
 .datepicker-container {  
   z-index: 999;
   position: absolute;
-  top: 100%;
 }
 .tui-datepicker {
   top: calc(100% + 2px);
   margin-left: calc(-50%);
 }
-
+@media screen and (max-width: 730px) {
+  .date_box > div:last-child .datepicker-container { 
+    right: 276px;
+  }
+}
+@media screen and (max-width: 470px) {
+  .date_box > div:last-child > .datepicker-container { 
+    right: auto;
+  }
+  .datepicker-container { 
+    left: calc(50% - 138px);
+  }
+}
 
 /* button */
 .btn_grp {
@@ -236,8 +247,10 @@
   color: #444;;
 }
 /* calender */
-.date_box > input {
-  width: calc(50% - 30px);
+.date_box > div {
+  width: calc(50% - 20px);
+}
+.date_box > div > input {
   padding: 2px 22px 2px 8px;
   background-size: 13px 14px;
   background-position: top 5px right 5px;
@@ -245,6 +258,7 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='Layer_2' viewBox='0 0 14.57 16.08'%3E%3Cdefs%3E%3Cstyle%3E .cls-1%7Bfill:none;stroke:%23666;stroke-linecap:round;stroke-linejoin:round%7D %3C/style%3E%3C/defs%3E%3Cg id='Layer_1-2' data-name='Layer_1'%3E%3Cpath d='M4.27.5v2.26M10.3.5v2.26M3.62 8.79h7.11M.5 5.34h13.57M3.62 11.81h3.02' class='cls-1'/%3E%3Crect width='13.57' height='13.79' x='.5' y='1.79' class='cls-1' rx='2.28' ry='2.28'/%3E%3C/g%3E%3C/svg%3E");
 }
 .date_box > span {
+  margin-top: 2px;
   text-align: center;
 }
 /* select & input together */
