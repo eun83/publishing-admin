@@ -9,7 +9,7 @@
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>component_그리드Type01</title>
+    <title>component_그리드Type02</title>
 
     <!--favicon-->
     <!--  
@@ -248,10 +248,9 @@
 
       <main class="work_frame">
         
-        <!-- 권한 관리 -->
         <div class="content_wrap">
           <div class="content_title">
-            <h3 class="page_title">Tui Grid type 01</h3>
+            <h3 class="page_title">Tui Grid type 02</h3>
             <ol class="page_breadcrumb">
               <li>HOME</li>
               <li><a href="#">1depth</a></li>
@@ -260,65 +259,56 @@
             </ol>
           </div>
         
-          <div class="content_area">
-
+          <div class="content_area"> 
+            
             <div class="area_title">
               <h4 class="left_grp">
-                <span class="sub_title">조회결과</span>
-                <span class="sub_script">
-                  총 건수: <span class="num">10</span>건
-                </span>
-              </h4>
-              <div class="right_grp btn_grp">
-                <div class="type_grp">
-                  <label class="hide">적용건수 선택</label>
-                  <select class="select_round">
-                    <option value="">전체</option>
-                    <option value="">10건</option>
-                    <option value="">100건</option>
-                  </select>
-                </div>
-                <div class="type_grp">
-                  <button type="button" class="btn_def btn_point_clr">열람신청</button>
-                  <button type="button" class="btn_def btn_main_clr">반출신청</button>
-                </div>
-                <div class="type_grp">
-                  <button type="button" class="btn_def btn_darkgray">철표지 출력<i class="icon_print"></i></button>
-                  <button type="button" class="btn_def btn_darkgray">선택 라벨지 출력<i class="icon_print"></i></button>
-                  <button type="button" class="btn_def btn_darkgray">전체 라벨지 출력<i class="icon_print"></i></button>
-                </div>
-                <div class="type_grp">
-                  <button type="button" class="btn_def btn_gray">테이블 설정<i class="icon_setting"></i></button>
-                </div>
-                <div class="type_grp">
-                  <button type="button" class="btn_def btn_line_black">양식다운로드<i class="icon_down_01"></i></button>
-                  <button type="button" class="btn_def btn_line_black">엑셀다운로드<i class="icon_down_02"></i></button>
-                  <button type="button" class="btn_def btn_line_black">엑셀업로드<i class="icon_up"></i></button>
-                </div>
-              </div>
+                <span class="sub_title">gird title</span>
+              </h4>              
             </div>
             
             <div class="grid_board">
-              <div id="grid_tale"></div>
-              <div id="grid_pagination" class="tui-pagination"></div>
-              <!-- 퍼블리싱 더미 데이터 - 나중에 삭제 -->
-              <script src="../test/grid_data_sample.js"></script>
-              <!-- 퍼블리싱 더미 데이터 - 나중에 삭제 -->
+              <div id="grid_tale2"></div>
+              <!-- 퍼블리싱 편의용 나중에 삭제 -->
+              <script src="../test/grid_data_sample2.js"></script>
+              <!-- 퍼블리싱 편의용 나중에 삭제 -->
               <script>
                 $(function(){
-                  const grid1 = new tui.Grid({
-                    el: document.getElementById("grid_tale"),
+                  const grid2 = new tui.Grid({
+                    el: document.getElementById("grid_tale2"),
                     scrollX: true,
                     scrollY: false,
+                    header: {
+                      height:90,
+                      complexColumns: [
+                        { header: '부서(ㄱ~ㅎ)', name: 'merge1', childNames: ['column2'] },
+                        { header: '합계', name: 'merge2', childNames: ['column3'] },
+                        { 
+                          header: '보존기간', 
+                          name: 'merge4', 
+                          childNames: ['header4', 'header5', 'header6', 'header7', 'header8', 'header9', 'header10']
+                        },
+                        { header: '영구', name: 'header4', childNames: ['column4']},
+                        { header: '준영구', name: 'header5', childNames: ['column5']},
+                        { header: '30년', name: 'header6', childNames: ['column6']},
+                        { header: '10년', name: 'header7', childNames: ['column7']},
+                        { header: '5년', name: 'header8', childNames: ['column8']},
+                        { header: '3년', name: 'header9', childNames: ['column9']},
+                        { header: '1년', name: 'header10', childNames: ['column10']},
+                      ]
+                    },
                     rowHeaders: ['checkbox'],
                     columns: [
-                      { name: "column1", header: "생산년도", sortable: true, width: 80, align: 'center' },
-                      { name: "column2", header: "제목", sortable: true, minWidth : 180, align: 'left' }, 
-                      { name: "column3", header: "관리번호", sortable: true, width: 160, align: 'center' },
-                      { name: "column4", header: "부서명", sortable: true, align: 'center' },
-                      { name: "column5", header: "반출여부", sortable: true, width: 80,  align: 'center' },
-                      { name: "column6", header: "박스위치", sortable: true, align: 'center' },
-                      { name: "column7", header: "보존기간", sortable: true, width: 80, align: 'center' },
+                      { name: "column1", header: "연번", align: 'center' },
+                      { name: "column2", header: "합계", align: 'center' }, 
+                      { name: "column3", header: "159,396", align: 'center' },
+                      { name: "column4", header: "20,558", align: 'center' },
+                      { name: "column5", header: "63,019", align: 'center' },
+                      { name: "column6", header: "8,146", align: 'center' },
+                      { name: "column7", header: "22,705", align: 'center' },
+                      { name: "column8", header: "38,178", align: 'center' },
+                      { name: "column9", header: "2,886", align: 'center' },
+                      { name: "column10", header: "472", align: 'center' },
                     ],
                     columnOptions: {
                       resizable: true,
@@ -326,14 +316,7 @@
                     }
                   });
                   tuiGridApplyTheme();
-                  
-                  // pagination
-                  var pagination1 = new tui.Pagination('grid_pagination', {
-                      totalItems: 500,
-                      itemsPerPage: 10,
-                      visiblePages: 5
-                  });
-                  grid1.resetData(grid_data_sample.slice(0, 10));
+                  grid2.resetData(grid_data_sample2.slice(0, 10));
                 });
               </script>
             </div>

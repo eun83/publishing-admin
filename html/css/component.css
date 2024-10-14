@@ -39,6 +39,67 @@
 }
 
 
+/* tui-grid */
+.tui-grid-container ::-webkit-scrollbar{
+  width: 5px;
+}
+.tui-grid-container ::-webkit-scrollbar-thumb{
+  background: rgba(170,170,170,.5);
+  border-radius: 50px;
+}
+.tui-grid-container ::-webkit-scrollbar-track{
+  background: rgba(255,255,255,0);
+}
+.tui-grid-container{
+  font-family: 'SUIT', 'Apple SD Gothic Neo', Arial, sans-serif;
+  scrollbar-3dlight-color:transparent;
+  scrollbar-darkshadow-color:transparent;
+  scrollbar-track-color:transparent;
+  scrollbar-shadow-color:transparent;
+  scrollbar-face-color:rgba(170,170,170,.5);
+  scrollbar-highlight-color:rgba(170,170,170,.5);
+  scrollbar-arrow-color:#ddd
+}
+.tui-grid-container table th {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  background-color: var(--clr_bg_point);
+}
+.tui-grid-container table td {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  background-color: #fff;
+}
+/* tui-pagination */
+.tui-pagination .tui-page-btn{
+  border: 0px !important;
+  border-radius: 3px;
+  font-weight: 700 !important;
+  margin-right:3px;
+}
+.tui-pagination .tui-page-btn.tui-first:not(.tui-is-disabled),
+.tui-pagination .tui-page-btn.tui-last:not(.tui-is-disabled),
+.tui-pagination .tui-page-btn.tui-prev:not(.tui-is-disabled),
+.tui-pagination .tui-page-btn.tui-next:not(.tui-is-disabled) {
+  border: 1px solid #666 !important;
+}
+.tui-pagination .tui-page-btn.tui-is-selected{
+  background-color: #222;
+}
+/* tui-datepicker */
+.datepicker-container {  
+  z-index: 999;
+  position: absolute;
+  top: 100%;
+}
+.tui-datepicker {
+  top: calc(100% + 2px);
+  margin-left: calc(-50%);
+}
+
+
 /* button */
 .btn_grp {
   display: flex;
