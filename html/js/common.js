@@ -22,19 +22,37 @@ $(function(){
     $('.top_frame .m_menu').removeClass('open');
   })
 
-  // 모바일 메뉴 토글
+  // 모바일 메뉴 토글 (on class 기준으로 동작)
+  // $('.m_gnb a').click(function(){
+  //   var me = $(this);
+  //   var href = me.attr('href');
+  //   if(href == '' || href == '#'){
+  //     if(me.parent().hasClass('on')){
+  //       me.parent().removeClass('on');
+  //     } else {
+  //       // top menu 클릭한 경우 기존에 메뉴 닫기
+  //       if(me.closest('ul').hasClass('m_gnb_dp1')){
+  //         $('.m_gnb .on').removeClass('on');
+  //       } 
+  //       me.parent().addClass('on');
+  //     }
+  //     return false;
+  //   }
+  // })
+
+  // 모바일 메뉴 토글 (애니메이션 효과를 위해 slide 효과용)
   $('.m_gnb a').click(function(){
     var me = $(this);
     var href = me.attr('href');
     if(href == '' || href == '#'){
-      if(me.parent().hasClass('on')){
-        me.parent().removeClass('on');
+      var target = me.siblings('ul');
+      if(target.is(":visible")){
+        target.slideUp();
       } else {
-        // top menu 클릭한 경우 기존에 메뉴 닫기
-        if(me.closest('ul').hasClass('m_gnb_dp1')){
-          $('.m_gnb .on').removeClass('on');
+        if(target.hasClass('m_gnb_dp2')){
+          $('.m_gnb .m_gnb_dp2').slideUp();
         } 
-        me.parent().addClass('on');
+        target.slideDown();
       }
       return false;
     }

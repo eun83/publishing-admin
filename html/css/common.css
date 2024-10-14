@@ -848,8 +848,15 @@ body {
     height: calc(100vh - 76px);
     padding: 0 15px 15px;
   }
+  /* 
+  클래스 fadeOut 효과로 전환하기 위해서 수정S
   .m_gnb .m_gnb_dp2 > li,
   .m_gnb .m_gnb_dp3 > li {
+    display: none;
+  } 
+  */
+  .m_gnb .m_gnb_dp2,
+  .m_gnb .m_gnb_dp3 {
     display: none;
   }
   .m_gnb .on .m_gnb_dp2 > li,
