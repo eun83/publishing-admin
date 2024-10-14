@@ -81,9 +81,9 @@ function findChildLink(target, path){
     // console.debug(`${el.getAttribute('href')} : ${finded}`);
     return finded;
   });
-  if(target.length == 0){
-    target = me.find(selector).filter((_,el)=>el.pathname == path).first();
-  }
+  // if(target.length == 0){
+  //   target = me.find(selector).filter((_,el)=>el.pathname == path).first();
+  // }
   return target;
 }
 

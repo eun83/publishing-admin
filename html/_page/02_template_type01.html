@@ -9,7 +9,7 @@
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>component_그리드Type01</title>
+    <title>template</title>
 
     <!--favicon-->
     <!--  
@@ -19,6 +19,7 @@
     -->
 
     <!-- css -->
+    <link rel="stylesheet" href="../lib/tui-date-picker/tui-date-picker.min.css" />
     <link rel="stylesheet" href="../lib/tui-grid/tui-grid.min.css" />
     <link rel="stylesheet" href="../lib/tui-pagination/tui-pagination.min.css" />
 
@@ -32,8 +33,10 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+    <script src="../lib/tui-date-picker/tui-date-picker.min.js"></script>
     <script src="../lib/tui-grid/tui-grid.min.js"></script>
     <script src="../lib/tui-pagination/tui-pagination.min.js"></script>
+    
     <script src="../js/common.js"></script>
     <script src="../js/tui.js"></script>
     <!-- 퍼블리싱 편의용 나중에 삭제 --><script src="../js/debug.js"></script><!-- 퍼블리싱 편의용 나중에 삭제 -->
@@ -203,9 +206,10 @@
                         <li><a href="./02_template_type12.html">시스템관리-공지사항</a></li>
                         <li><a href="./02_template_type13.html">시스템관리-권한관리</a></li>
                         <li><a href="./02_template_type14.html">시스템관리-사용자관리</a></li>
-                        <li><a href="./02_template_type15.html">시스템관리-처리과관리</a></li>
-                        <li><a href="./02_template_type16.html">시스템관리-로고관리</a></li>
-                        <li><a href="./02_template_type17.html">시스템관리-기록물 현황 통계</a></li>
+                        <li><a href="./02_template_type15.html">시스템관리-사용자 상세페이지</a></li>
+                        <li><a href="./02_template_type16.html">시스템관리-처리과관리</a></li>
+                        <li><a href="./02_template_type17.html">시스템관리-로고관리</a></li>
+                        <li><a href="./02_template_type18.html">시스템관리-기록물 현황 통계</a></li>
                       </ul>
                     </li>                                        
                   </ul>
@@ -221,21 +225,29 @@
       <aside class="left_frame">
         <ul class="left_menu left_dp1">
           <li>
-            <a href="./01_component_search.html">컴포넌트</a>
+            <a href="./02_template_type01.html">템플릿</a>
             <ul class="left_dp2">
               <li class="" >
-                <a href="./01_component_search.html">컴포넌트 UI</a>
+                <a href="./02_template_type01.html">PPT 화면 모음</a>
                 <ul class="left_dp3">
-                  <li><a href="./01_component_search.html">검색박스</a></li>
-                  <li><a href="./01_component_table.html">표 타입 table</a></li>
-                  <li><a href="./01_component_dialog.html">다이알로그 알림창</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="./01_component_tui01.html" class="">그리드 : TUI그리드</a>
-                <ul class="left_dp3">
-                  <li><a href="./01_component_tui01.html">Type 01</a></li>
-                  <li><a href="./01_component_tui02.html">Type 02</a></li>
+                  <li><a href="./02_template_type01.html">비전자기록물 검색</a></li>
+                  <li><a href="./02_template_type02.html">대출관리-반입반출현황</a></li>
+                  <li><a href="./02_template_type03.html">대출관리-반입반출신청현황</a></li>
+                  <li><a href="./02_template_type04.html">대출관리-반입</a></li>
+                  <li><a href="./02_template_type05.html">대출관리-반출</a></li>
+                  <li><a href="./02_template_type06.html">열람</a></li>
+                  <li><a href="./02_template_type07.html">열람조회</a></li>
+                  <li><a href="./02_template_type08.html">기록물 폐기 관리-만료</a></li>
+                  <li><a href="./02_template_type09.html">기록물 폐기 관리-보류</a></li>
+                  <li><a href="./02_template_type10.html">기록물 폐기 관리-폐기의견등록</a></li>
+                  <li><a href="./02_template_type11.html">기록물 폐기 관리-폐기리스트</a></li>
+                  <li><a href="./02_template_type12.html">시스템관리-공지사항</a></li>
+                  <li><a href="./02_template_type13.html">시스템관리-권한관리</a></li>
+                  <li><a href="./02_template_type14.html">시스템관리-사용자관리</a></li>
+                  <li><a href="./02_template_type15.html">시스템관리-사용자 상세페이지</a></li>
+                  <li><a href="./02_template_type16.html">시스템관리-처리과관리</a></li>
+                  <li><a href="./02_template_type17.html">시스템관리-로고관리</a></li>
+                  <li><a href="./02_template_type18.html">시스템관리-기록물 현황 통계</a></li>
                 </ul>
               </li>
             </ul>
@@ -247,10 +259,9 @@
       </aside>
 
       <main class="work_frame">
-        
         <div class="content_wrap">
           <div class="content_title">
-            <h3 class="page_title">Tui Grid type 01</h3>
+            <h3 class="page_title">기록물 철</h3>
             <ol class="page_breadcrumb">
               <li>HOME</li>
               <li><a href="#">1depth</a></li>
@@ -260,6 +271,96 @@
           </div>
         
           <div class="content_area">
+
+            <!-- search box type ex1 : 기본 4칸 + 버튼영역 -->
+            <div class="search_wrap">
+              <ul>
+                <li>
+                  <p>철 제목</p>
+                  <div class="rowbox">
+                    <input type="text" placeholder="제목을 입력해주세요.">
+                  </div>
+                </li>
+                <li>
+                  <p>철 제목 추가검색</p>
+                  <div class="rowbox">
+                    <input type="text" placeholder="제목을 입력해주세요.">
+                  </div>
+                </li>                
+                <li>
+                  <p>생산년도</p>
+                  <div class="rowbox date_box">
+                    <div>
+                      <input type="text" id="datepicker-input1" aria-label="Date-Time">
+                      <div class="datepicker-container" id="datepicker-input1-container"></div>
+                    </div>
+                    <span>~</span>
+                    <div>
+                      <input type="text" id="datepicker-input2" aria-label="Date-Time">
+                      <div class="datepicker-container"  id="datepicker-input2-container"></div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <p>관리번호</p>
+                  <div class="rowbox">
+                    <input type="text" placeholder="">
+                  </div>
+                </li>                
+                <li>
+                  <p>박스위치</p>
+                  <div class="rowbox">
+                    <input type="text" placeholder="">
+                  </div>
+                </li>
+                <li>
+                  <p>반출여부</p>
+                  <div class="rowbox">
+                    <label class="hide">생산년도 선택</label>
+                    <select class="select_box" required>
+                      <option value="" disabled selected>전체</option>
+                      <option value="">10건</option>
+                      <option value="">100건</option>
+                    </select>
+                  </div>
+                </li>
+                <!-- 아래 클래스 col_2cell : 2칸 병합 / col_cell : 3칸 병합 / col_4cell : 4칸 병합 -->
+                <li class="col_2cell">
+                  <p>생산기관</p>
+                  <div class="rowbox select_input_box">
+                    <label class="hide">생산년도 선택</label>
+                    <select class="select_box" required>
+                      <option value="" disabled selected>전체</option>
+                      <option value="">10건</option>
+                      <option value="">100건</option>
+                    </select>
+                    <input type="text" placeholder="처리과를 입력해주세요.">
+                  </div>
+                </li>
+                <li class="col_2cell">
+                  <p>보존기간</p>
+                  <div class="rowbox check_box">
+                    <input type="checkbox" id="check_01" class="check_def">
+                    <label for="check_01">체크박스1</label>
+                    <input type="checkbox" id="check_02" class="check_def">
+                    <label for="check_02">체크박스2</label>
+                    <input type="checkbox" id="check_03" class="check_def">
+                    <label for="check_03">체크박스3</label>
+                    <input type="checkbox" id="check_04" class="check_def">
+                    <label for="check_04">체크박스4</label>
+                    <input type="checkbox" id="check_05" class="check_def">
+                    <label for="check_05">체크박스5</label>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="srch_btn">
+                <div class="type_grp type_single">
+                  <button type="button" class="btn_def btn_point_clr">조회</button>
+                  <button type="button" class="btn_def btn_red_clr">초기화</button>
+                </div>
+              </div>
+            </div>
 
             <div class="area_title">
               <h4 class="left_grp">
@@ -336,9 +437,53 @@
                 });
               </script>
             </div>
-        
-      </main>      
+            
 
-    </div>    
+          </div>
+        
+        </div>
+      </main>
+    </div>
+    <div id="datepicker_wrapper" style="margin-top: -1px;"></div>
+    <script>
+      $(function(){
+        var datepicker = new tui.DatePicker('#datepicker-input1-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input1',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        var datepicker2 = new tui.DatePicker('#datepicker-input2-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input2',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        var datepicker3 = new tui.DatePicker('#datepicker-input3-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input3',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        var datepicker4 = new tui.DatePicker('#datepicker-input4-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input4',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        var datepicker5 = new tui.DatePicker('#datepicker-input5-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input5',
+                format: 'yyyy-MM-dd'
+            }
+        });
+      });
+    </script>
   </body>
+  
 </html>
