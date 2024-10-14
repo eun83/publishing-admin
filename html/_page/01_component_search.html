@@ -19,6 +19,7 @@
     -->
 
     <!-- css -->
+    <link rel="stylesheet" href="../lib/tui-date-picker/tui-date-picker.min.css" />
     <link rel="stylesheet" href="../lib/tui-grid/tui-grid.min.css" />
     <link rel="stylesheet" href="../lib/tui-pagination/tui-pagination.min.css" />
 
@@ -32,8 +33,10 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+    <script src="../lib/tui-date-picker/tui-date-picker.min.js"></script>
     <script src="../lib/tui-grid/tui-grid.min.js"></script>
     <script src="../lib/tui-pagination/tui-pagination.min.js"></script>
+    
     <script src="../js/common.js"></script>
     <script src="../js/tui.js"></script>
     <!-- 퍼블리싱 편의용 나중에 삭제 --><script src="../js/debug.js"></script><!-- 퍼블리싱 편의용 나중에 삭제 -->
@@ -278,9 +281,11 @@
                 <li>
                   <p>생산년도</p>
                   <div class="rowbox date_box">
-                    <input type="text" placeholder="달력">
+                    <input type="text" id="datepicker-input1" aria-label="Date-Time">
+                    <div class="datepicker-container" id="datepicker-input1-container"></div>
                     <span>~</span>
-                    <input type="text" placeholder="달력">
+                    <input type="text" id="datepicker-input2" aria-label="Date-Time">
+                    <div class="datepicker-container"  id="datepicker-input2-container"></div>
                   </div>
                 </li>
                 <li>
@@ -402,9 +407,11 @@
                 <li>
                   <p>생산년도</p>
                   <div class="rowbox date_box">
-                    <input type="text" placeholder="달력">
+                    <input type="text" id="datepicker-input3">
+                    <div class="datepicker-container" id="datepicker-input3-container"></div>
                     <span>~</span>
-                    <input type="text" placeholder="달력">
+                    <input type="text" id="datepicker-input4">
+                    <div class="datepicker-container" id="datepicker-input4-container"></div>
                   </div>
                 </li>                
                 <li>
@@ -460,7 +467,8 @@
                 <li>
                   <p>생산년도 싱글</p>
                   <div class="rowbox date_box">
-                    <input type="text" placeholder="달력">
+                    <input type="text" id="datepicker-input5">
+                    <div class="datepicker-container" id="datepicker-input5-container"></div>
                   </div>
                 </li>
               </ul>
@@ -477,8 +485,47 @@
         
         </div>
       </main>
-
-
-    </div>    
+    </div>
+    <div id="datepicker_wrapper" style="margin-top: -1px;"></div>
+    <script>
+      $(function(){
+        var datepicker = new tui.DatePicker('#datepicker-input1-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input1',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        var datepicker2 = new tui.DatePicker('#datepicker-input2-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input2',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        var datepicker3 = new tui.DatePicker('#datepicker-input3-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input3',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        var datepicker4 = new tui.DatePicker('#datepicker-input4-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input4',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        var datepicker5 = new tui.DatePicker('#datepicker-input5-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input5',
+                format: 'yyyy-MM-dd'
+            }
+        });
+      });
+    </script>
   </body>
+  
 </html>

@@ -19,6 +19,7 @@
     -->
 
     <!-- css -->
+    <link rel="stylesheet" href="./lib/tui-date-picker/tui-date-picker.min.css" />
     <link rel="stylesheet" href="./lib/tui-grid/tui-grid.min.css" />
     <link rel="stylesheet" href="./lib/tui-pagination/tui-pagination.min.css" />
     
@@ -33,6 +34,7 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+    <script src="./lib/tui-date-picker/tui-date-picker.min.js"></script>
     <script src="./lib/tui-grid/tui-grid.min.js"></script>
     <script src="./lib/tui-pagination/tui-pagination.min.js"></script>
     <script src="./js/common.js"></script>
@@ -302,9 +304,11 @@
                 <li>
                   <p>생산년도</p>
                   <div class="rowbox date_box">
-                    <input type="text" placeholder="달력">
-                    <span>~</span>
-                    <input type="text" placeholder="달력">
+                      <input type="text" id="datepicker-input1" aria-label="Date-Time">
+                      <div class="datepicker-container" id="datepicker-input1-container"></div>
+                      <span>~</span>
+                      <input type="text" id="datepicker-input2" aria-label="Date-Time">
+                      <div class="datepicker-container"  id="datepicker-input2-container"></div>
                   </div>
                 </li>
                 <li>
@@ -607,7 +611,25 @@
         
         </div>
       </main>
-
-    </div>    
+    </div>
+    <script>
+      $(function(){
+        var datepicker = new tui.DatePicker('#datepicker-input1-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input1',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        console.debug(datepicker);
+        var datepicker2 = new tui.DatePicker('#datepicker-input2-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input2',
+                format: 'yyyy-MM-dd'
+            }
+        });
+      });
+    </script>
   </body>
 </html>
