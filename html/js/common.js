@@ -77,8 +77,10 @@ function findChildLink(target, path){
     var finded = el && el.href != '' 
       && !el.getAttribute('href').startsWith('#')
       && el.pathname == path;
+    // console.debug(el);
+    // console.debug(`${el.getAttribute('href')} : ${finded}`);
     return finded;
-  }).first();
+  });
   if(target.length == 0){
     target = me.find(selector).filter((_,el)=>el.pathname == path).first();
   }
