@@ -933,14 +933,14 @@ body {
     border-width: 1px;
   }
   .m_gnb .actived.dp_arrow > a::after,
-  .m_gnb .on.dp_arrow > a::after {
+  .m_gnb .actived.dp_arrow > a::after {
     top: 30px;
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
     transition: var(--tran_basic);
   }
-  .m_gnb .m_gnb_dp2 .actived.dp_arrow
-  .m_gnb .m_gnb_dp2 .on.dp_arrow > a::after {
+  .m_gnb .m_gnb_dp2 .actived.dp_arrow,
+  .m_gnb .m_gnb_dp2 .actived.dp_arrow > a::after {
     top: 17px;
   }
 
