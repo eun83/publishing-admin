@@ -35,8 +35,7 @@ $(function(){
         if(target.hasClass('m_gnb_dp2')){
           var prev = $('.m_gnb .m_gnb_dp2');
           prev.parent().removeClass('actived').find('.actived').removeClass('actived').find('ul').hide();
-          //prev.slideUp('fast');
-          prev.hide();
+          prev.hide(); // or prev.slideUp('fast');
         }
         target.parent().addClass('actived') 
         target.slideDown();
@@ -45,7 +44,7 @@ $(function(){
     }
   })
 
-  // model area toggle
+  
   $('.model_btn[model_target]').click(function(){
     var model_target = $(this).attr('model_target');
     if(model_target != ''){
@@ -65,10 +64,32 @@ $(function(){
   updateGnbMenu();
 })
 
+/**
+ * 
+ * @param {*} target 
+ * @param {*} path 
+ * @returns 
+ */
+function findChildLink(target, path){
+  var me = $(target);
+  var selector = me.find('a[href]');
+  var target = $(selector).filter((_,el)=> {
+    var finded = el && el.href != '' 
+      && !el.getAttribute('href').startsWith('#')
+      && el.pathname == path;
+    return finded;
+  }).first();
+  if(target.length == 0){
+    target = me.find(selector).filter((_,el)=>el.pathname == path).first();
+  }
+  return target;
+}
 
+/**
+ * Header 메뉴 업데이트
+ */
 function updateHeaderMenu(){
-  let targetPath = location.pathname;
-  let targetLink = $('.gnb a[href]').filter((_,el)=>el.pathname == targetPath);
+  let targetLink = findChildLink('.gnb', location.pathname);
   if(targetLink.length){
     let closest = targetLink.closest('li');
     closest.addClass('on');
@@ -77,9 +98,11 @@ function updateHeaderMenu(){
   }
 }
 
+/**
+ * Left 메뉴 업데이트
+ */
 function updateLeftbMenu(){
-  let targetPath = location.pathname;
-  let targetLink = $('.left_frame ul li a[href]').filter((_,el)=>el.pathname == targetPath);
+  let targetLink = findChildLink('.left_frame ul li', location.pathname);
   if(targetLink.length){
     targetLink.addClass('on');
     let closest = targetLink.closest('.m_gnb');
@@ -89,12 +112,13 @@ function updateLeftbMenu(){
   }
 }
 
+/**
+ * GNB 메뉴 업데이트
+ */
 function updateGnbMenu(){
-  let targetPath = location.pathname;
-  let targetLink = $('.m_gnb ul li a[href]').filter((_,el)=>el.pathname == targetPath);
+  let targetLink = findChildLink('.m_gnb ul li', location.pathname);
   if(targetLink.length){
     let closest = targetLink.closest('.m_gnb');
-    //targetLink.parentsUntil(closest).filter('li').addClass('on');
     targetLink.parentsUntil(closest).filter('li').addClass('actived').children('ul').show();
   } else {
     console.debug('gnb menu not found.')
