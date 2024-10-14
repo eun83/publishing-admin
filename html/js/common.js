@@ -22,24 +22,6 @@ $(function(){
     $('.top_frame .m_menu').removeClass('open');
   })
 
-  // 모바일 메뉴 토글 (on class 기준으로 동작)
-  // $('.m_gnb a').click(function(){
-  //   var me = $(this);
-  //   var href = me.attr('href');
-  //   if(href == '' || href == '#'){
-  //     if(me.parent().hasClass('on')){
-  //       me.parent().removeClass('on');
-  //     } else {
-  //       // top menu 클릭한 경우 기존에 메뉴 닫기
-  //       if(me.closest('ul').hasClass('m_gnb_dp1')){
-  //         $('.m_gnb .on').removeClass('on');
-  //       } 
-  //       me.parent().addClass('on');
-  //     }
-  //     return false;
-  //   }
-  // })
-
   // 모바일 메뉴 토글 (애니메이션 효과를 위해 slide 효과용)
   $('.m_gnb a').click(function(){
     var me = $(this);
@@ -47,11 +29,16 @@ $(function(){
     if(href == '' || href == '#'){
       var target = me.siblings('ul');
       if(target.is(":visible")){
-        target.slideUp();
+        target.parent().removeClass('actived').find('.actived').removeClass('actived').find('ul').hide();
+        target.slideUp('fast');
       } else {
         if(target.hasClass('m_gnb_dp2')){
-          $('.m_gnb .m_gnb_dp2').slideUp();
-        } 
+          var prev = $('.m_gnb .m_gnb_dp2');
+          prev.parent().removeClass('actived').find('.actived').removeClass('actived').find('ul').hide();
+          //prev.slideUp('fast');
+          prev.hide();
+        }
+        target.parent().addClass('actived') 
         target.slideDown();
       }
       return false;
@@ -107,7 +94,8 @@ function updateGnbMenu(){
   let targetLink = $('.m_gnb ul li a[href="'+targetPath+'"');
   if(targetLink.length){
     let closest = targetLink.closest('.m_gnb');
-    targetLink.parentsUntil(closest).filter('li').addClass('on');
+    //targetLink.parentsUntil(closest).filter('li').addClass('on');
+    targetLink.parentsUntil(closest).filter('li').addClass('actived').children('ul').show();
   } else {
     console.debug('gnb menu not found.')
   }
