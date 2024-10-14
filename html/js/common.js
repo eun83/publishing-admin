@@ -68,7 +68,7 @@ $(function(){
 
 function updateHeaderMenu(){
   let targetPath = location.pathname;
-  let targetLink = $('.gnb a[href="'+targetPath+'"');
+  let targetLink = $('.gnb a[href]').filter((_,el)=>el.pathname == targetPath);
   if(targetLink.length){
     let closest = targetLink.closest('li');
     closest.addClass('on');
@@ -79,7 +79,7 @@ function updateHeaderMenu(){
 
 function updateLeftbMenu(){
   let targetPath = location.pathname;
-  let targetLink = $('.left_frame ul li a[href="'+targetPath+'"');
+  let targetLink = $('.left_frame ul li a[href]').filter((_,el)=>el.pathname == targetPath);
   if(targetLink.length){
     targetLink.addClass('on');
     let closest = targetLink.closest('.m_gnb');
@@ -91,7 +91,7 @@ function updateLeftbMenu(){
 
 function updateGnbMenu(){
   let targetPath = location.pathname;
-  let targetLink = $('.m_gnb ul li a[href="'+targetPath+'"');
+  let targetLink = $('.m_gnb ul li a[href]').filter((_,el)=>el.pathname == targetPath);
   if(targetLink.length){
     let closest = targetLink.closest('.m_gnb');
     //targetLink.parentsUntil(closest).filter('li').addClass('on');
