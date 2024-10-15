@@ -304,11 +304,15 @@
                 <li>
                   <p>생산년도</p>
                   <div class="rowbox date_box">
-                      <input type="text" id="datepicker-input1" aria-label="Date-Time">
-                      <div class="datepicker-container" id="datepicker-input1-container"></div>
+                      <div>
+                        <input type="text" id="datepicker-input1" aria-label="Date-Time">
+                        <div class="datepicker-container" id="datepicker-input1-container"></div>
+                      </div>
                       <span>~</span>
-                      <input type="text" id="datepicker-input2" aria-label="Date-Time">
-                      <div class="datepicker-container"  id="datepicker-input2-container"></div>
+                      <div>
+                        <input type="text" id="datepicker-input2" aria-label="Date-Time">
+                        <div class="datepicker-container"  id="datepicker-input2-container"></div>
+                      </div>
                   </div>
                 </li>
                 <li>
@@ -430,9 +434,15 @@
                 <li>
                   <p>생산년도</p>
                   <div class="rowbox date_box">
-                    <input type="text" placeholder="달력">
+                    <div>
+                      <input type="text" id="datepicker-input3">
+                      <div class="datepicker-container" id="datepicker-input3-container"></div>
+                    </div>
                     <span>~</span>
-                    <input type="text" placeholder="달력">
+                    <div>
+                      <input type="text" id="datepicker-input4">
+                      <div class="datepicker-container" id="datepicker-input4-container"></div>
+                    </div>
                   </div>
                 </li>                
                 <li>
@@ -488,7 +498,10 @@
                 <li>
                   <p>생산년도 싱글</p>
                   <div class="rowbox date_box">
-                    <input type="text" placeholder="달력">
+                    <div>
+                      <input type="text" id="datepicker-input5">
+                      <div class="datepicker-container" id="datepicker-input5-container"></div>
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -621,11 +634,31 @@
                 format: 'yyyy-MM-dd'
             }
         });
-        console.debug(datepicker);
         var datepicker2 = new tui.DatePicker('#datepicker-input2-container', {
             date: new Date(),
             input: {
                 element: '#datepicker-input2',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        var datepicker3 = new tui.DatePicker('#datepicker-input3-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input3',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        var datepicker4 = new tui.DatePicker('#datepicker-input4-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input4',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        var datepicker5 = new tui.DatePicker('#datepicker-input5-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input5',
                 format: 'yyyy-MM-dd'
             }
         });
