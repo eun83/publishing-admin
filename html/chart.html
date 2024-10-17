@@ -226,88 +226,90 @@
               <li><a href="#">3depth</a></li>
             </ol>
           </div>
+
+          <style>
+            .chart-area {
+              width: 100vh; 
+              height:50vh;
+            }
+          </style>
         
-          <div class="content_area">
-            <div class="chart-area">
-              <div id="chart1" style="width: 100vh; height:50vh;"></div>
-              <script>
-                $(function(){
-                  const data = {
-                    categories: ['Browser'],
-                    series: [
-                      { name: 'Chrome', data: 46.02 },
-                      { name: 'IE', data: 20.47 },
-                      { name: 'Firefox', data: 17.71 },
-                      { name: 'Safari', data: 5.45 },
-                      { name: 'Opera', data: 3.1 },
-                      { name: 'Etc', data: 7.25 }
-                    ],
-                  };
-                  const chart = toastui.Chart.pieChart({ 
-                    el : document.getElementById('chart1'),
-                    data, 
-                    options : {
-                      chart: { title: 'Usage share of web browsers', width: '100vh', height: '100vh' },
-                      series: { selectable: true },
-                    }
-                  });
-                });
-              </script>
-            </div>
+          <div class="chart-area" id="chart1"></div>
+          <script>
+            $(function(){
+              const data = {
+                categories: ['Browser'],
+                series: [
+                  { name: 'Chrome', data: 46.02 },
+                  { name: 'IE', data: 20.47 },
+                  { name: 'Firefox', data: 17.71 },
+                  { name: 'Safari', data: 5.45 },
+                  { name: 'Opera', data: 3.1 },
+                  { name: 'Etc', data: 7.25 }
+                ],
+              };
+              const chart = toastui.Chart.pieChart({ 
+                el : document.getElementById('chart1'),
+                data, 
+                options : {
+                  chart: { title: 'Usage share of web browsers', width: '100vh', height: '100vh' },
+                  series: { selectable: true },
+                }
+              });
+            });
+          </script>
 
-            <hr />
+          <hr />
 
-            <div class="chart-area">
-              <div id="chart2" style="width: 100vh; height:50vh;"></div>
-              <script>
-                $(function(){
-                  const data = {
-                    series: [
-                      {
-                        name: 'SiteA',
-                        data: [
-                          ['08/22/2020 10:00:00', 202],
-                          ['08/22/2020 10:05:00', 212],
-                          ['08/22/2020 10:10:00', 222],
-                          ['08/22/2020 10:15:00', 351],
-                          ['08/22/2020 10:20:00', 412],
-                          ['08/22/2020 10:25:00', 420],
-                          ['08/22/2020 10:30:00', 300],
-                          ['08/22/2020 10:35:00', 213],
-                          ['08/22/2020 10:40:00', 230],
-                          ['08/22/2020 10:45:00', 220],
-                          ['08/22/2020 10:50:00', 234],
-                          ['08/22/2020 10:55:00', 210],
-                          ['08/22/2020 11:00:00', 220],
-                        ],
-                      },
-                      {
-                        name: 'SiteB',
-                        data: [
-                          ['08/22/2020 10:00:00', 312],
-                          ['08/22/2020 10:10:00', 320],
-                          ['08/22/2020 10:20:00', 295],
-                          ['08/22/2020 10:30:00', 300],
-                          ['08/22/2020 10:40:00', 320],
-                          ['08/22/2020 10:50:00', 30],
-                          ['08/22/2020 11:00:00', 20],
-                        ],
-                      },
+          <div class="chart-area" id="chart2"></div>
+          <script>
+            $(function(){
+              const data = {
+                series: [
+                  {
+                    name: 'SiteA',
+                    data: [
+                      ['08/22/2020 10:00:00', 202],
+                      ['08/22/2020 10:05:00', 212],
+                      ['08/22/2020 10:10:00', 222],
+                      ['08/22/2020 10:15:00', 351],
+                      ['08/22/2020 10:20:00', 412],
+                      ['08/22/2020 10:25:00', 420],
+                      ['08/22/2020 10:30:00', 300],
+                      ['08/22/2020 10:35:00', 213],
+                      ['08/22/2020 10:40:00', 230],
+                      ['08/22/2020 10:45:00', 220],
+                      ['08/22/2020 10:50:00', 234],
+                      ['08/22/2020 10:55:00', 210],
+                      ['08/22/2020 11:00:00', 220],
                     ],
-                  };
-                  const chart = toastui.Chart.lineChart({ 
-                    el : document.getElementById('chart2'),
-                    data, 
-                    options : {
-                      chart: { title: 'Concurrent user', width: '100vh', height: '100vh' },
-                      xAxis: { pointOnColumn: true, title: 'minute', date: { format: 'hh:mm:ss' }, },
-                      yAxis: { title: 'users' },
-                    }
-                  });
-                });
-              </script>
-            </div>
-        </div>
+                  },
+                  {
+                    name: 'SiteB',
+                    data: [
+                      ['08/22/2020 10:00:00', 312],
+                      ['08/22/2020 10:10:00', 320],
+                      ['08/22/2020 10:20:00', 295],
+                      ['08/22/2020 10:30:00', 300],
+                      ['08/22/2020 10:40:00', 320],
+                      ['08/22/2020 10:50:00', 30],
+                      ['08/22/2020 11:00:00', 20],
+                    ],
+                  },
+                ],
+              };
+              const chart = toastui.Chart.lineChart({ 
+                el : document.getElementById('chart2'),
+                data, 
+                options : {
+                  chart: { title: 'Concurrent user', width: '100vh', height: '100vh' },
+                  xAxis: { pointOnColumn: true, title: 'minute', date: { format: 'hh:mm:ss' }, },
+                  yAxis: { title: 'users' },
+                }
+              });
+            });
+          </script>
+          </div>
       </main>
     </div>    
   </body>
