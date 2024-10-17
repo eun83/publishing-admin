@@ -49,6 +49,15 @@ module.exports = {
                         gitignore: false,
                         ignore: ['**/*.LICENSE.txt']
                     }
+                },
+                { 
+                    from: path.resolve(__dirname, 'node_modules/@toast-ui/chart/dist'),
+                    to: 'lib/toastui-chart',
+                    globOptions: {
+                        dot: false,
+                        gitignore: false,
+                        ignore: ['**/*.LICENSE.txt']
+                    }
                 }
             ],
         }),
