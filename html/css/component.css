@@ -372,6 +372,17 @@ p.is_req::after {
   background: rgba(255,255,255,0);
 }
 /* default */
+table caption {
+  overflow: hidden;
+  position: relative;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
 .table_wrap table {
   width: 100%;
   border-top: 2px solid var(--clr_main);
