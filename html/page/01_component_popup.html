@@ -65,7 +65,7 @@
               </ul>
             </nav>            
             <div class="utile">
-              <button type="button" class="model_btn notice_msg" model_target=".notice_msg_pop">
+              <button type="button" class="btn_model notice_msg" model_target=".notice_msg_pop">
                 <span class="hide">알림메세지</span>
                 <span class="ntc_msg">10</span>
               </button>
@@ -264,7 +264,7 @@
                 <span class="sub_title">기본 팝업</span>
               </h4>
             </div>
-            <button type="button" class="btn_def btn_point_clr">기본팝업 틀 보기</button>
+            <button type="button" class="btn_def btn_point_clr btn_model" model_target="#popup_frame1">기본팝업 틀 보기</button>
 
             <hr style="margin: 45px 0;">
             
@@ -273,7 +273,7 @@
                 <span class="sub_title">검색 테이블 팝업</span>
               </h4>
             </div>
-            <button type="button" class="btn_def btn_point_clr">검색 테이블 팝업 보기</button>
+            <button type="button" class="btn_def btn_point_clr btn_model" model_target="#popup_frame2">검색 테이블 팝업 보기</button>
             <div>
 
             <hr style="margin: 45px 0;">
@@ -283,7 +283,7 @@
                 <span class="sub_title">이미지게시판 팝업</span>
               </h4>
             </div>
-            <button type="button" class="btn_def btn_point_clr">이미지게시판 팝업 보기</button>
+            <button type="button" class="btn_def btn_point_clr btn_model" model_target="#popup_frame3">이미지게시판 팝업 보기</button>
             <div>
 
           </div>
@@ -291,8 +291,173 @@
         </div>
       </main>
 
-      <!-- 알림(경고) 창 : div.wrap 안에 위치합니다. -->
-      
+      <!-- div.wrap 안에 위치합니다. -->
+      <!-- popup : 틀 -->
+      <div id="popup_frame1" class="popup_frame">
+        <div class="popup_wrap">
+          <div class="pop_title">
+            <h5>상세보기</h5>
+            <button type="button" class="btn_x">
+              <span class="hide">닫기</span>
+              <i class="icon_x"></i>
+            </button>
+          </div>
+
+          <div class="pop_content">
+            popup_frame1 내용이 들어갑니다.
+          </div>
+
+        </div>
+      </div>
+
+      <!-- popup : 게시판 팝업 -->
+      <div id="popup_frame2" class="popup_frame">
+        <div class="popup_wrap">
+          <div class="pop_title">
+            <h5>상세보기</h5>
+            <button type="button" class="btn_x">
+              <span class="hide">닫기</span>
+              <i class="icon_x"></i>
+            </button>
+          </div>
+
+          <div class="pop_content">
+            <!-- search box type ex1 : 기본 4칸 + 버튼영역 -->
+            <div class="search_wrap">
+              <ul>
+                <li>
+                  <p>철 제목</p>
+                  <div class="rowbox">
+                    <input type="text" placeholder="">
+                  </div>
+                </li>
+                <li>
+                  <p>생산부서</p>
+                  <div class="rowbox">
+                    <input type="text" placeholder="">
+                  </div>
+                </li>                
+                <li>
+                  <p>생산년도</p>
+                  <div class="rowbox date_box">
+                    <div>
+                      <input type="text" id="datepicker-input1" aria-label="Date-Time">
+                      <div class="datepicker-container" id="datepicker-input1-container"></div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <p>권(호)</p>
+                  <div class="rowbox">
+                    <input type="text" placeholder="">
+                  </div>
+                </li> 
+                <li>
+                  <p>보존기간</p>
+                  <div class="rowbox">
+                    <label class="hide">보존기간 선택</label>
+                    <select class="select_box" required>
+                      <option value="" disabled selected>전체</option>
+                      <option value="">10년</option>
+                      <option value="">20년</option>
+                    </select>
+                  </div>
+                </li>
+                <li>
+                  <p>보존상자번호</p>
+                  <div class="rowbox">
+                    <input type="text" placeholder="">
+                  </div>
+                </li>
+              </ul>
+
+              <div class="srch_btn">
+                <div class="type_grp type_single">
+                  <button type="button" class="btn_def btn_point_clr">조회</button>
+                  <button type="button" class="btn_def btn_red_clr">초기화</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid_board">
+              <div id="grid_tale1"></div>
+              <div id="grid_pagination1" class="tui-pagination"></div>
+              <!-- 퍼블리싱 더미 데이터 - 나중에 삭제 -->
+              <script src="../test/grid_data_sample.js"></script>
+              <!-- 퍼블리싱 더미 데이터 - 나중에 삭제 -->
+              <script>
+                $(function(){
+                  const grid1 = new tui.Grid({
+                    el: document.getElementById("grid_tale1"),
+                    scrollX: true,
+                    scrollY: false,
+                    rowHeaders: ['checkbox'],
+                    columns: [
+                      { name: "column1", header: "생산년도", sortable: true, width: 80, align: 'center' },
+                      { name: "column2", header: "제목", sortable: true, minWidth : 180, align: 'left' }, 
+                      { name: "column3", header: "관리번호", sortable: true, width: 160, align: 'center' },
+                      { name: "column4", header: "부서명", sortable: true, align: 'center' },
+                      { name: "column5", header: "반출여부", sortable: true, width: 80,  align: 'center' },
+                      { name: "column6", header: "박스위치", sortable: true, align: 'center' },
+                      { name: "column7", header: "보존기간", sortable: true, width: 80, align: 'center' },
+                    ],
+                    columnOptions: {
+                      resizable: true,
+                      minWidth: 80 
+                    }
+                  });
+                  tuiGridApplyTheme();
+                  
+                  // pagination
+                  var pagination1 = new tui.Pagination('grid_pagination1', {
+                      totalItems: 500,
+                      itemsPerPage: 10,
+                      visiblePages: 5
+                  });
+                  grid1.resetData(grid_data_sample.slice(0, 10));
+                });
+              </script>
+            </div>
+
+            <div class="btn_grp btn_right">
+              <div class="type_grp">
+                <button type="button" class="btn_def btn_point_clr">수정</button>
+                <button type="button" class="btn_def btn_red_clr">삭제</button>
+              </div>
+              <div class="type_grp">
+                <button type="button" class="btn_def btn_darkgray">출력</button>
+              </div>              
+              <div class="type_grp">
+                <button type="button" class="btn_def btn_line_black">열람 펼치기</button>
+                <button type="button" class="btn_def btn_line_black">반출 펼치기</button>
+              </div>
+              <div class="type_grp">
+                <button type="button" class="btn_def btn_gray">닫기</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- popup : 틀 -->
+      <div id="popup_frame3" class="popup_frame">
+        <div class="popup_wrap">
+          <div class="pop_title">
+            <h5>상세보기</h5>
+            <button type="button" class="btn_x">
+              <span class="hide">닫기</span>
+              <i class="icon_x"></i>
+            </button>
+          </div>
+
+          <div class="pop_content">
+            popup_frame3 내용이 들어갑니다.
+          </div>
+
+        </div>
+      </div>
 
     </div>    
   </body>

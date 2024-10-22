@@ -530,7 +530,7 @@ table.align_center {
   transform: scale(0);
   transition: var(--tran_basic);
 }
-.popup_frame.show {
+.popup_frame.on {
   visibility: visible;
   opacity: 1;
   transform: scale(100%);

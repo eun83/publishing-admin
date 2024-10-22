@@ -45,19 +45,24 @@ $(function(){
   })
 
   
-  $('.model_btn[model_target]').click(function(){
+  $('.btn_model[model_target]').click(function(){
     var model_target = $(this).attr('model_target');
     if(model_target != ''){
-      console.debug(model_target);
       const target = $(model_target);
       target.toggleClass('on');
       return false;
     }
   });
 
+  $('.popup_frame .btn_x').click(function(){
+    $(this).closest('.popup_frame').removeClass('on');
+  });  
+
   $('.dialog_pop .btn_x').click(function(){
     $(this).closest('.dialog_pop').remove();
   });
+
+  $()
 
   updateHeaderMenu();
   updateLeftbMenu();
