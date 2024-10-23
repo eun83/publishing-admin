@@ -74,6 +74,30 @@
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
+.icon_plus {
+  color: #000;
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+}
+.icon_plus::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background-color: currentColor;
+}
+.icon_plus::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background-color: currentColor;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
 /* scrollbar */
 .work_frame::-webkit-scrollbar,
 .left_menu::-webkit-scrollbar,

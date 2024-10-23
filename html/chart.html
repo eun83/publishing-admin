@@ -229,7 +229,7 @@
 
           <style>
             .chart-area {
-              width: 100vh; 
+              width: 100%; 
               height:50vh;
             }
           </style>
@@ -252,7 +252,7 @@
                 el : document.getElementById('chart1'),
                 data, 
                 options : {
-                  chart: { title: 'Usage share of web browsers', width: '100vh', height: '100vh' },
+                  chart: { title: 'Usage share of web browsers', width: '100%', height: '100vh' },
                   series: { selectable: true },
                 }
               });
@@ -302,7 +302,7 @@
                 el : document.getElementById('chart2'),
                 data, 
                 options : {
-                  chart: { title: 'Concurrent user', width: '100vh', height: '100vh' },
+                  chart: { title: 'Concurrent user', width: '100%', height: '100vh' },
                   xAxis: { pointOnColumn: true, title: 'minute', date: { format: 'hh:mm:ss' }, },
                   yAxis: { title: 'users' },
                 }
