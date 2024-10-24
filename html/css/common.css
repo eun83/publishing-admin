@@ -103,14 +103,16 @@
 .left_menu::-webkit-scrollbar,
 .m_gnb::-webkit-scrollbar,
 .msg_pop_list::-webkit-scrollbar,
-.pop_content::-webkit-scrollbar {
+.pop_content::-webkit-scrollbar,
+.table_scroll::-webkit-scrollbar {
   width: 5px;
 }
 .work_frame::-webkit-scrollbar-thumb,
 .left_menu::-webkit-scrollbar-thumb,
 .m_gnb::-webkit-scrollbar-thumb,
 .msg_pop_list::-webkit-scrollbar-thumb,
-.pop_content::-webkit-scrollbar-thumb {
+.pop_content::-webkit-scrollbar-thumb,
+.table_scroll::-webkit-scrollbar-thumb {
   border-radius: 50px;
   background: rgba(170,170,170,.5);
 }
@@ -118,7 +120,8 @@
 .left_menu::-webkit-scrollbar-track,
 .m_gnb::-webkit-scrollbar-track,
 .msg_pop_list::-webkit-scrollbar-track,
-.pop_content::-webkit-scrollbar-track {
+.pop_content::-webkit-scrollbar-track,
+.table_scroll::-webkit-scrollbar-track {
   background: rgba(255,255,255,0);
 }
 

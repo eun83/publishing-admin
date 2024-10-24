@@ -62,7 +62,27 @@ $(function(){
     $(this).closest('.dialog_pop').remove();
   });
 
-  $()
+  $('.card_box [control-area]').click(function(){
+    const button = $(this);
+    const control_area_id = button.attr('control-area');
+    if(control_area_id == ''){
+      return false;
+    }
+    if(!button.hasClass('on')){
+      const card_box = button.closest('.card_box');
+      const control_area = $('#'+control_area_id);
+      
+      card_box.find('.card_tab button.on').removeClass('on');
+      card_box.find('.tab_content.on').removeClass('on');
+
+      button.addClass('on');
+      control_area.addClass('on');
+
+      
+    } 
+    return false;
+    
+  });
 
   updateHeaderMenu();
   updateLeftbMenu();
@@ -76,7 +96,7 @@ $(function(){
  * @returns 
  */
 function findChildLink(target, path){
-  var me = $(target);
+  const me = $(target);
   var selector = me.find('a[href]');
   var target = $(selector).filter((_,el)=> {
     var finded = el && el.href != '' 

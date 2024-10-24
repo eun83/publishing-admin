@@ -263,15 +263,15 @@
                   <h5><i class="icon_chart"></i>보유현황</h5>
                   <ul class="card_tab">
                     <li>
-                      <button type="button" class="on">기록유형</button>
+                      <button type="button" class="on" control-area="chart_tab_01">기록유형</button>
                     </li>
                     <li>
-                      <button type="button" class="">보존기간</button>
+                      <button type="button" class="" control-area="chart_tab_02">보존기간</button>
                     </li>
                   </ul>
                 </div>
                 <div class="card_content">
-                  <div class="tab_content on">
+                  <div class="tab_content on" id="chart_tab_01">
                     <div class="chart_wrap">
                       <div class="chart-area" id="chart1"></div>
                       <script>
@@ -332,7 +332,7 @@
                       </table>
                     </div>
                   </div>
-                  <div class="tab_content">
+                  <div class="tab_content" id="chart_tab_02">
                     <div class="chart_wrap">
                       <div class="chart-area" id="chart2"></div>
                       <script>
@@ -398,19 +398,61 @@
 
               <div class="card_grp">
                 <div class="card_search">
-                  검색영역
+                  <form>
+                    <div class="searchword_wrap">
+                      <label for="" class="hide">검색어</label>
+                      <input type="text" id="" class="" placeholder="검색어를 입력하세요.">
+                      <button type="submit" class="btn_search">
+                        <i class="icon_search"></i>
+                        <span class="hide">검색</span>
+                      </button>
+                    </div>
+                  </form>
                 </div>
-                <div class="card_box">
+                <div class="card_box popular_card">
                   <div class="card_title">
                     <h5><i class="icon_searchword"></i>인기 검색어</h5>
                   </div>                  
                   <div class="card_content">
-                    검색어
+                    <ul class="popular_list">
+                      <li>
+                        <b>1.</b>
+                        <p>인기검색어 1</p>
+                      </li>
+                      <li>
+                        <b>2.</b>
+                        <p>인기검색어 2</p>
+                      </li>
+                      <li>
+                        <b>3.</b>
+                        <p>인기검색어 3</p>
+                      </li>
+                      <li>
+                        <b>4.</b>
+                        <p>인기검색어 4</p>
+                      </li>
+                      <li>
+                        <b>5.</b>
+                        <p>인기검색어 5</p>
+                      </li>
+                      <li>
+                        <b>6.</b>
+                        <p>인기검색어 6</p>
+                      </li>
+                      <li>
+                        <b>7.</b>
+                        <p>인기검색어 7</p>
+                      </li>
+                      <li>
+                        <b>8.</b>
+                        <p>인기검색어 8</p>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
 
-              <div class="card_box ">
+              <div class="card_box notice_card">
                 <div class="card_title">
                   <h5><i class="icon_notice"></i>공지사항</h5>
                   <button type="button" class="btn_more">
@@ -419,25 +461,39 @@
                   </button>
                 </div>
                 <div class="card_content">
-                  <ul>
+                  <ul class="notice_list">
                     <li>
                       <a href="">
-                        <span>NOTICE</span>
+                        <span class="tag_text">NOTICE</span>
                         <p>기록관리 솔루션 소개</p>
                         <span>2023-03-15</span>
                       </a>
                     </li>
                     <li>
                       <a href="">
-                        <span>NOTICE</span>
+                        <span class="tag_text">NOTICE</span>
                         <p>사용매뉴얼 입니다.</p>
                         <span>2022-11-21</span>
                       </a>
                     </li>
                     <li>
                       <a href="">
-                        <span>NEW</span>
+                        <span class="tag_text">NEW</span>
                         <p>열람신청현황 수정입니다.</p>
+                        <span>2022-08-17</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span></span>
+                        <p>보유현황 업데이트 안내.</p>
+                        <span>2022-08-17</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <span></span>
+                        <p>사용자매뉴얼 수정사항 입니다.</p>
                         <span>2022-08-17</span>
                       </a>
                     </li>
@@ -445,41 +501,194 @@
                 </div>
               </div>
 
-              <div class="card_box ">
+              <div class="card_box request_card">
                 <div class="card_title">
                   <h5><i class="icon_book"></i>열람신청현황</h5>                  
                 </div>
                 <div class="card_content">
-                  <div>
+                  <div class="text_warning">
                     <p>* 반납 기간이 경과한 기록물이 <span>3건</span> 있습니다.</p>
                     <button type="button" class="btn_more">
                       <span class="hide">더보기</span>
                       <i class="icon_plus"></i>
                     </button>
                   </div>
-                  <div>
-                    테이블
+                  <div class="table_wrap">
+                    <table class="align_center col_body_th">
+                      <caption class="hide">table</caption>
+                      <colgroup>
+                        <col style="width: 34%;">
+                        <col style="width: 33%;">
+                        <col style="width: 33%;">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">열람</th>
+                          <th scope="col">반출</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">신청</th>
+                          <td>5</td>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">승인</th>
+                          <td>3</td>
+                          <td>3</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">반려</th>
+                          <td>1</td>
+                          <td>2</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">반입</th>
+                          <td>0</td>
+                          <td>0</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
 
-              <div class="card_box ">
+              <div class="card_box records_card">
                 <div class="card_title">
                   <h5><i class="icon_paper"></i>기록물현황</h5>
                   <ul class="card_tab">
                     <li>
-                      <button type="button" class="on">인기기록물</button>
+                      <button type="button" class="on" control-area="records_tab_01">인기기록물</button>
                     </li>
                     <li>
-                      <button type="button" class="">우리부서기록물</button>
-                      <a href="#"></a>
+                      <button type="button" class="" control-area="records_tab_02">우리부서기록물</button>
                     </li>
                   </ul>
                 </div>
                 <div class="card_content">
-                  <div class="tab_con_01">
-                    <div>
-                      테이블
+                  <div class="tab_content on" id="records_tab_01">
+                    <div class="table_scroll">
+                      <div class="table_wrap">
+                        <table class="align_center">
+                          <caption class="hide">table</caption>
+                          <colgroup>
+                            <col style="width: 10%;">
+                            <col style="width: 30%;">
+                            <col style="width: 40%;">
+                            <col style="width: 20%;">
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">순위</th>
+                              <th scope="col">처리부서</th>
+                              <th scope="col">제목</th>
+                              <th scope="col">반출</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>통합기록서비스팀</td>
+                              <td class="align_left">시청각자료 영상등록</td>
+                              <td>시청각류</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>통합기록서비스팀</td>
+                              <td class="align_left">사진자료</td>
+                              <td>시청각류</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>통합기록서비스팀</td>
+                              <td class="align_left">100세시대 일자리 보조금 정산서</td>
+                              <td>문서류</td>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td>통합기록서비스팀</td>
+                              <td class="align_left">사진 등록 테스트</td>
+                              <td>시청각류</td>
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td>통합기록서비스팀</td>
+                              <td class="align_left">영상등록 테스트</td>
+                              <td>시청각류</td>
+                            </tr>
+                            <tr>
+                              <td>6</td>
+                              <td>통합기록서비스팀</td>
+                              <td class="align_left">시청각자료 영상등록</td>
+                              <td>시청각류</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab_content" id="records_tab_02">
+                    <div class="table_scroll">
+                      <div class="table_wrap">
+                        <table class="align_center">
+                          <caption class="hide">table</caption>
+                          <colgroup>
+                            <col style="width: 10%;">
+                            <col style="width: 30%;">
+                            <col style="width: 40%;">
+                            <col style="width: 20%;">
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">순위</th>
+                              <th scope="col">처리부서</th>
+                              <th scope="col">제목</th>
+                              <th scope="col">반출</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>11</td>
+                              <td>통합기록서비스팀</td>
+                              <td class="align_left">시청각자료 영상등록</td>
+                              <td>시청각류</td>
+                            </tr>
+                            <tr>
+                              <td>12</td>
+                              <td>통합기록서비스팀</td>
+                              <td class="align_left">사진자료</td>
+                              <td>시청각류</td>
+                            </tr>
+                            <tr>
+                              <td>13</td>
+                              <td>통합기록서비스팀</td>
+                              <td class="align_left">100세시대 일자리 보조금 정산서</td>
+                              <td>문서류</td>
+                            </tr>
+                            <tr>
+                              <td>14</td>
+                              <td>통합기록서비스팀</td>
+                              <td class="align_left">사진 등록 테스트</td>
+                              <td>시청각류</td>
+                            </tr>
+                            <tr>
+                              <td>15</td>
+                              <td>통합기록서비스팀</td>
+                              <td class="align_left">영상등록 테스트</td>
+                              <td>시청각류</td>
+                            </tr>
+                            <tr>
+                              <td>16</td>
+                              <td>통합기록서비스팀</td>
+                              <td class="align_left">시청각자료 영상등록</td>
+                              <td>시청각류</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>
