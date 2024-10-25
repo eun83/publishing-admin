@@ -1008,6 +1008,12 @@ table.align_center,
   color: #fff;
   text-align: center;
   border-radius: 5px;
+  transition: var(--tran_basic);
+}
+.login .login_btn:hover,
+.login .login_btn:active,
+.login .login_btn:focus {
+  background-color: var(--clr_main);
 }
 .login footer {
   position: absolute;
