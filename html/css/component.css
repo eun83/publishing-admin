@@ -461,7 +461,7 @@ p.is_req::after {
   border-bottom: 0;
 }
 .table_wrap .row_table tfoot {
-  border-top: 2px double #ccc;
+  border-top: 3px double #ccc;
 }
 /* align_center : 모든 셀 가운데 정렬 */
 .table_wrap .align_center,
@@ -882,13 +882,167 @@ table.align_center,
 }
 
 
+
+
+/* login page */
+.login {
+  background-color: var(--clr_bg_point);
+}
+.login .wrap {
+  width: 100%;
+  height: 756px;
+  background-image: url(../images/bg_login.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
+}
+.login .wrap::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 756px;
+  background-color: var(--clr_main);
+  content: '';
+  opacity: .85;
+}
+.login .login_layer {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  max-width: 1280px;
+  padding: 100px 10px;
+  transform: translateX(-50%);
+}
+.login .logo img {
+  margin: 0;
+}
+.login .content_area {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 100px;
+}
+.login .visual_title {
+  flex: 1 1 0;
+  padding: 70px 50px;
+  color: #fff;
+}
+.login .visual_title p {
+  font-size: 25px;
+  font-weight: 500;
+}
+.login .visual_title h2 {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 90px;
+}
+.login .visual_title h2 span {
+  display: block;
+}
+.login .visual_title h2::before,
+.login .visual_title h2::after {
+  display: block;
+  background-color: var(--clr_point);
+  content: '';
+}
+.login .visual_title h2::before {
+  width: 30px;
+  height: 5px;
+  margin: 40px 0 35px;
+}
+.login .visual_title h2::after {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-bottom: -5px;
+  border-radius: 50%;
+}
+.login .login_box {
+  flex: 1 1 0;
+  width: 100%;
+  max-width: 600px;
+  height: 670px;
+  padding: 65px 50px;
+  -webkit-box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  font-size: 25px;
+  border-radius: 5px;
+}
+.login .login_box h3 {
+  font-weight: 800;
+  text-align: center;
+}
+.login .form_grp {
+  margin-top: 100px;
+}
+.login .form_grp p {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #aaa;
+}
+.login .form_grp .form_box:first-child {
+  margin-bottom: 40px;
+}
+.login .form_grp input {
+  padding: 8px 6px 5px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  color: #111;
+}
+.login .form_grp input::placeholder {
+  color: #111;
+}
+.login .login_btn {
+  display: block;
+  width: 100%;
+  margin-top: 100px;
+  padding: 20px 0;
+  background-color: var(--clr_point);
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+}
+.login footer {
+  position: absolute;
+  bottom: 160px;
+  font-weight: 300;
+  color: #aaa;
+}
+.login footer p {
+  position: relative;
+  padding-left: 115px;
+}
+.login footer p::before,
+.login footer p::after {
+  display: block;
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 43px;
+  height: 43px;
+  background-color: var(--clr_point);
+  content: '';
+  border-radius: 50%;
+}
+.login footer p::after {
+  left: 53px;
+  background-color: var(--clr_main);
+}
+
+
 /* ---------- respond ---------- */
 @media screen and (max-width: 1860px) {
   .dshbd_wrap {
     grid-template-columns: repeat(2, minmax(500px, auto));
   }
 }
-
 @media screen and (max-width: 1700px) {
   .search_wrap ul {
     grid-template-columns: repeat(3, 1fr);
@@ -905,8 +1059,16 @@ table.align_center,
   .search_wrap .col_3cell {
     grid-column: auto / span 2;
   }
-}
 
+  /* login */
+  .login .login_layer {
+    max-width: none;
+    padding: 80px 50px;
+  }
+  .login footer {
+    bottom: 130px;
+  }
+}
 @media screen and (max-width: 1350px) {
   .dshbd_wrap {
     grid-template-columns: repeat(1, minmax(500px, auto));
@@ -916,7 +1078,28 @@ table.align_center,
     overflow-y: hidden;
   }
 }
-
+@media screen and (max-width: 1200px) {
+  /* login */
+  .login .wrap,
+  .login .wrap::before {
+    max-height: 720px;
+  }
+  .login .visual_title p {
+    font-size: 22px;
+  }
+  .login .visual_title h2 {
+    font-size: 50px;
+    line-height: 70px;
+  }
+  .login .visual_title h2::after {
+    width: 17px;
+    height: 17px;
+    margin-bottom: -5px;
+  }
+  .login footer {
+    bottom: 170px;
+  }
+}
 @media screen and (max-width: 1100px) {
   .search_wrap ul {
     grid-template-columns: repeat(1, 1fr);
@@ -925,6 +1108,62 @@ table.align_center,
   .search_wrap .col_3cell,
   .search_wrap .col_2cell {
     grid-column: auto;
+  }
+}
+@media screen and (max-width: 1024px) {
+  /* login */
+  .login .wrap,
+  .login .wrap::before {
+    height: 50vh;
+    min-height: 520px;
+    background-size: 1024px;
+  }
+  .login .login_layer {
+    padding: 50px;
+  }
+  .login .header .logo {
+    display: block;
+  }
+  .login .content_area {
+    display: block;
+    margin-top: 30px;
+  }
+  .login .visual_title {
+    margin-bottom: 20px;
+    padding: 30px 50px;
+  }
+  .login .visual_title h2::before {
+    margin: 30px 0 25px;
+  }
+  .login .visual_title h2 span {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .login .login_box {
+    max-width: none;
+    height: auto;
+  }
+  .login .form_grp,
+  .login .login_btn {
+    margin-top: 60px;
+  }
+  .login footer {
+    display: flex;
+    justify-content: flex-end;
+    position: static;
+    margin-top: 50px;
+  }
+  .login footer p {
+    padding: 0;
+    padding-right: 115px;
+  }
+  .login footer p::before,
+  .login footer p::after {
+    right: 0;
+    left: auto;
+  }
+  .login footer p::before {
+    right: 53px;
   }
 }
 @media screen and (max-width: 840px) {
@@ -942,10 +1181,74 @@ table.align_center,
     justify-content: center;
   }
 }
-
+@media screen and (max-width: 775px) {
+  .login .visual_title h2 span {
+    display: block;
+    margin-right: 0;
+  }
+}
 @media screen and (max-width: 600px) {
   .dshbd_wrap {
     grid-template-columns: repeat(1, minmax(100%, auto));
+  }
+}
+@media screen and (max-width: 510px) {
+  /* login */
+  .login .login_layer {
+    padding: 30px;
+  }
+  .login .content_area {
+    margin-top: 0;
+  }
+  .login .visual_title h2::before {
+    width: 20px;
+    height: 3px;
+    margin: 20px 0 15px;
+  }
+  .login .visual_title h2 {
+    font-size: 36px;
+    line-height: 50px;
+}
+  .login .visual_title p {
+    font-size: 18px;
+  }
+  .login .visual_title h2::after {
+    width: 12px;
+    height: 12px;
+  }
+  .login .visual_title {
+    margin-bottom: 0;
+    padding: 30px 10%;
+  }
+  .login .login_box {
+    padding: 40px 50px;
+    font-size: 20px;
+  }
+  .login .form_grp p {
+    font-size: 18px;
+  }
+  .login .form_grp {
+    margin-top: 30px;
+  }
+  .login .login_btn {
+    margin-top: 40px;
+    padding: 12px 0;
+  }
+  .login footer {
+    margin-top: 30px;
+  }  
+  .login footer p {
+    padding-right: 95px;
+    font-size: 14px;
+  }
+  .login footer p::before, 
+  .login footer p::after {
+    top: -6px;
+    width: 35px;
+    height: 35px;
+  }
+  .login footer p::before {
+    right: 45px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -958,7 +1261,6 @@ table.align_center,
     margin-top: 10px;
   }
 }
-
 @media screen and (max-width: 430px) {
   .search_wrap ul > li {
     flex-direction: column;
@@ -982,5 +1284,27 @@ table.align_center,
   .notice_list li a span:first-child {
     display: none;
   }
-
+}
+@media screen and (max-width: 380px) {
+  .login .visual_title p {
+    font-size: 15px;
+  }
+  .login .visual_title h2 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .login .login_box {
+    padding: 40px 30px;
+    font-size: 20px;
+  }
+  .login footer {
+    margin-top: 20px;
+  }
+  .login footer p {
+    padding-right: 0;
+  }
+  .login footer p::before, 
+  .login footer p::after {
+    display: none;
+  }
 }
