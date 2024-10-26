@@ -87,6 +87,34 @@ $(function(){
   updateHeaderMenu();
   updateLeftbMenu();
   updateGnbMenu();
+
+  $('.slider_for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    asNavFor: '.slider_nav',
+    responsive: [
+      {
+        breakpoint: 430,
+        settings: {
+          fade: false
+        }
+      }
+    ]
+  });
+  $('.slider_nav').slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    asNavFor: '.slider_for',    
+    focusOnSelect: true,
+    arrows:true
+  });
+
 })
 
 /**

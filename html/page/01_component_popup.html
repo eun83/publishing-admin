@@ -283,7 +283,6 @@
               </h4>
             </div>
             <button type="button" class="btn_def btn_point_clr btn_model" model_target="#popup_frame2">검색 테이블 팝업 보기</button>
-            <div>
 
             <hr style="margin: 45px 0;">
 
@@ -293,7 +292,6 @@
               </h4>
             </div>
             <button type="button" class="btn_def btn_point_clr btn_model" model_target="#popup_frame3">이미지게시판 팝업 보기</button>
-            <div>
 
           </div>
         
@@ -462,8 +460,135 @@
           </div>
 
           <div class="pop_content">
-            popup_frame3 <br>
-            이미지 슬라이드 팝업 내용이 들어갑니다.
+            <div class="img_pop">
+              <div class="img_slider">
+                <!-- 큰 이미지 -->
+                <div class="slider_for">
+                  <div><img src="../images/board_img01.jpg"></div>
+                  <div><img src="../images/board_img02.jpg"></div>
+                  <div><img src="../images/board_img03.jpg"></div>
+                  <div><img src="../images/board_img04.jpg"></div>
+                  <div><img src="../images/board_img05.jpg"></div>
+                  <div><img src="../images/board_img06.jpg"></div>
+                  <div><img src="../images/board_img07.jpg"></div>
+                </div>
+                <!-- 썸네일 -->
+                <div class="slider_nav thumbnail">
+                  <div><img src="../images/board_img01.jpg"></div>
+                  <div><img src="../images/board_img02.jpg"></div>
+                  <div><img src="../images/board_img03.jpg"></div>
+                  <div><img src="../images/board_img04.jpg"></div>
+                  <div><img src="../images/board_img05.jpg"></div>
+                  <div><img src="../images/board_img06.jpg"></div>
+                  <div><img src="../images/board_img07.jpg"></div>
+                </div>
+
+              </div>
+              <div class="img_info">
+                <div>
+                  <div class="area_title">
+                    <h4>
+                      <span class="sub_title">시청각물 정보</span>
+                    </h4>              
+                  </div>
+                  <!-- row table -->
+                  <div class="table_wrap">
+                    <table class="row_table">
+                      <caption class="hide">row table</caption>
+                      <colgroup>
+                        <col style="width: 25%;">
+                        <col style="width: 75%;">
+                      </colgroup>                
+                      <tbody>
+                        <tr>
+                          <th scope="row">관리번호</th>
+                          <td>42000085-9999-영구-1</td>
+                        </tr>               
+                        <tr>
+                          <th scope="row">분류</th>
+                          <td>사진/필름류</td>
+                        </tr>               
+                        <tr>
+                          <th scope="row">처리과</th>
+                          <td>
+                            <div class="rowbox">
+                              <input type="text" placeholder="강릉시">
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">제목</th>
+                          <td>
+                            <div class="rowbox">
+                              <input type="text" placeholder="농업기술 새해설계교육">
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">생산연도</th>
+                          <td>
+                            <div class="rowbox">
+                              <input type="text" placeholder="2006">
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">상세설명</th>
+                          <td>
+                            <div class="rowbox">
+                              
+                              <textarea rows="1" oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'>상세 설명글이 들어갑니다.</textarea>
+                              <!-- <input type="text" placeholder="상세 설명글이 들어갑니다."> -->
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <div class="btn_grp btn_right">              
+                    <div class="type_grp type_single">
+                      <button type="button" class="btn_def btn_point_clr">수정</button>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div>
+                  <div class="area_title">
+                    <h4>
+                      <span class="sub_title">파일 정보</span>
+                    </h4>              
+                  </div>
+                  <!-- row table -->
+                  <div class="table_wrap">
+                    <table class="row_table">
+                      <caption class="hide">row table</caption>
+                      <colgroup>
+                        <col style="width: 25%;">
+                        <col style="width: 75%;">
+                      </colgroup>                
+                      <tbody>
+                        <tr>
+                          <th scope="row">파일명</th>
+                          <td>2006-1-10_농업기술새해설계교육_농업기술교육001.jpg</td>
+                        </tr>               
+                        <tr>
+                          <th scope="row">용량</th>
+                          <td>17KB</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="btn_grp btn_right">              
+              <div class="type_grp type_single">
+                <button type="button" class="btn_def btn_gray">닫기</button>
+              </div>
+            </div>
+
           </div>
 
         </div>
