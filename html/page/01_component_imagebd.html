@@ -339,11 +339,11 @@
                 <li>
                   <a href="#">
                     <div class="img_box">
-                      <img src="" alt="">
+                      <img src="../images/board_img01.jpg" alt="">
                     </div>
                     <div class="txt_box">
-                      <p>이미지 타이틀</p>
-                      <div>
+                      <p>추곡워시기</p>
+                      <div class="txt_info">
                         <p>문화예술과</p>
                         <span>2005년</span>
                       </div>
@@ -353,13 +353,13 @@
                 <li>
                   <a href="#">
                     <div class="img_box">
-                      <img src="" alt="">
+                      <img src="../images/board_img02.jpg" alt="">
                     </div>
                     <div class="txt_box">
-                      <p>이미지 타이틀</p>
-                      <div>
-                        <p>문화예술과</p>
-                        <span>2005년</span>
+                      <p>농업기술 새해설계교육</p>
+                      <div class="txt_info">
+                        <p>강릉시</p>
+                        <span>2006년</span>
                       </div>
                     </div>
                   </a>
@@ -367,13 +367,13 @@
                 <li>
                   <a href="#">
                     <div class="img_box">
-                      <img src="" alt="">
+                      <img src="../images/board_img03.jpg" alt="">
                     </div>
                     <div class="txt_box">
-                      <p>이미지 타이틀</p>
-                      <div>
-                        <p>문화예술과</p>
-                        <span>2005년</span>
+                      <p>불우이웃돕기행사</p>
+                      <div class="txt_info">
+                        <p>강릉시</p>
+                        <span>2015년</span>
                       </div>
                     </div>
                   </a>
@@ -381,13 +381,13 @@
                 <li>
                   <a href="#">
                     <div class="img_box">
-                      <img src="" alt="">
+                      <img src="../images/board_img04.jpg" alt="">
                     </div>
                     <div class="txt_box">
-                      <p>이미지 타이틀</p>
-                      <div>
-                        <p>문화예술과</p>
-                        <span>2005년</span>
+                      <p>이웃돕기 성공전달(썬크루즈)</p>
+                      <div class="txt_info">
+                        <p>강릉시</p>
+                        <span>2015년</span>
                       </div>
                     </div>
                   </a>
@@ -395,13 +395,13 @@
                 <li>
                   <a href="#">
                     <div class="img_box">
-                      <img src="" alt="">
+                      <img src="../images/board_img05.jpg" alt="">
                     </div>
                     <div class="txt_box">
-                      <p>이미지 타이틀</p>
-                      <div>
+                      <p>시계박물관(타입스토리)</p>
+                      <div class="txt_info">
                         <p>문화예술과</p>
-                        <span>2005년</span>
+                        <span>2010년</span>
                       </div>
                     </div>
                   </a>
@@ -409,47 +409,60 @@
                 <li>
                   <a href="#">
                     <div class="img_box">
-                      <img src="" alt="">
+                      <img src="../images/board_img06.jpg" alt="">
                     </div>
                     <div class="txt_box">
-                      <p>이미지 타이틀</p>
-                      <div>
-                        <p>문화예술과</p>
-                        <span>2005년</span>
+                      <p>도심지교통 심포지엄(의회주관)</p>
+                      <div class="txt_info">
+                        <p>강릉시</p>
+                        <span>2008년</span>
                       </div>
                     </div>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <div class="img_box">
-                      <img src="" alt="">
+                    <div class="img_box no_img">
+                      
                     </div>
                     <div class="txt_box">
                       <p>이미지 타이틀</p>
-                      <div>
-                        <p>문화예술과</p>
-                        <span>2005년</span>
+                      <div class="txt_info">
+                        <p>해당처리과</p>
+                        <span>0000년</span>
                       </div>
                     </div>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <div class="img_box">
-                      <img src="" alt="">
+                    <div class="img_box no_img">
+                      
                     </div>
                     <div class="txt_box">
                       <p>이미지 타이틀</p>
-                      <div>
-                        <p>문화예술과</p>
-                        <span>2005년</span>
+                      <div class="txt_info">
+                        <p>해당처리과</p>
+                        <span>0000년</span>
                       </div>
                     </div>
                   </a>
                 </li>
               </ul>
             </div>
+
+            <div id="grid_pagination" class="tui-pagination"></div>
+            <script>
+              $(function(){
+                // pagination
+                var pagination1 = new tui.Pagination('grid_pagination', {
+                    totalItems: 500,
+                    itemsPerPage: 10,
+                    visiblePages: 5
+                });
+                grid1.resetData(grid_data_sample.slice(0, 10));
+              });
+            </script>
 
           </div>
         
