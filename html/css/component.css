@@ -880,6 +880,7 @@ table.align_center,
   height: 255px;
   overflow-y: auto;
 }
+/* image board */
 
 
 
@@ -1088,7 +1089,7 @@ table.align_center,
   /* login */
   .login .wrap,
   .login .wrap::before {
-    max-height: 720px;
+    height: 720px;
   }
   .login .visual_title p {
     font-size: 22px;
@@ -1120,8 +1121,7 @@ table.align_center,
   /* login */
   .login .wrap,
   .login .wrap::before {
-    height: 50vh;
-    min-height: 520px;
+    height: 520px;
     background-size: 1024px;
   }
   .login .login_layer {

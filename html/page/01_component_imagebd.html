@@ -9,7 +9,7 @@
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>component_팝업창</title>
+    <title>component_이미지게시판</title>
 
     <!--favicon-->
     <!--  
@@ -19,6 +19,7 @@
     -->
 
     <!-- css -->
+    <link rel="stylesheet" href="../lib/tui-date-picker/tui-date-picker.min.css" />
     <link rel="stylesheet" href="../lib/tui-grid/tui-grid.min.css" />
     <link rel="stylesheet" href="../lib/tui-pagination/tui-pagination.min.css" />
 
@@ -28,24 +29,22 @@
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/component.css" />
 
-
     <!-- js -->
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
-    
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
 
+    <script src="../lib/tui-date-picker/tui-date-picker.min.js"></script>
     <script src="../lib/tui-grid/tui-grid.min.js"></script>
     <script src="../lib/tui-pagination/tui-pagination.min.js"></script>
+    
     <script src="../js/common.js"></script>
     <script src="../js/tui.js"></script>
     <!-- 퍼블리싱 편의용 나중에 삭제 --><script src="../js/debug.js"></script><!-- 퍼블리싱 편의용 나중에 삭제 -->
-    
-    
-
   </head>
   <body>
     <div class="skipmenu">
@@ -258,7 +257,7 @@
       <main class="work_frame">
         <div class="content_wrap">
           <div class="content_title">
-            <h3 class="page_title">테이블 팝업</h3>
+            <h3 class="page_title">특수유형기록물 검색</h3>
             <ol class="page_breadcrumb">
               <li>HOME</li>
               <li><a href="#">1depth</a></li>
@@ -268,69 +267,7 @@
           </div>
         
           <div class="content_area">
-            <div class="area_title">
-              <h4 class="left_grp">
-                <span class="sub_title">기본 팝업</span>
-              </h4>
-            </div>
-            <button type="button" class="btn_def btn_point_clr btn_model" model_target="#popup_frame1">기본팝업 틀 보기</button>
 
-            <hr style="margin: 45px 0;">
-            
-            <div class="area_title">
-              <h4 class="left_grp">
-                <span class="sub_title">검색 테이블 팝업</span>
-              </h4>
-            </div>
-            <button type="button" class="btn_def btn_point_clr btn_model" model_target="#popup_frame2">검색 테이블 팝업 보기</button>
-            <div>
-
-            <hr style="margin: 45px 0;">
-
-            <div class="area_title">
-              <h4 class="left_grp">
-                <span class="sub_title">이미지게시판 팝업</span>
-              </h4>
-            </div>
-            <button type="button" class="btn_def btn_point_clr btn_model" model_target="#popup_frame3">이미지게시판 팝업 보기</button>
-            <div>
-
-          </div>
-        
-        </div>
-      </main>
-
-      <!-- div.wrap 안에 위치합니다. -->
-      <!-- popup : 틀 -->
-      <div id="popup_frame1" class="popup_frame">
-        <div class="popup_wrap">
-          <div class="pop_title">
-            <h5>상세보기</h5>
-            <button type="button" class="btn_x">
-              <span class="hide">닫기</span>
-              <i class="icon_x"></i>
-            </button>
-          </div>
-
-          <div class="pop_content">
-            popup_frame1 내용이 들어갑니다.
-          </div>
-
-        </div>
-      </div>
-
-      <!-- popup : 게시판 팝업 -->
-      <div id="popup_frame2" class="popup_frame">
-        <div class="popup_wrap">
-          <div class="pop_title">
-            <h5>상세보기</h5>
-            <button type="button" class="btn_x">
-              <span class="hide">닫기</span>
-              <i class="icon_x"></i>
-            </button>
-          </div>
-
-          <div class="pop_content">
             <!-- search box type ex1 : 기본 4칸 + 버튼영역 -->
             <div class="search_wrap">
               <ul>
@@ -341,39 +278,39 @@
                   </div>
                 </li>
                 <li>
-                  <p>생산부서</p>
-                  <div class="rowbox">
-                    <input type="text" placeholder="">
-                  </div>
-                </li>                
-                <li>
                   <p>생산년도</p>
                   <div class="rowbox date_box">
                     <div>
                       <input type="text" id="datepicker-input1" aria-label="Date-Time">
                       <div class="datepicker-container" id="datepicker-input1-container"></div>
                     </div>
+                    <span>~</span>
+                    <div>
+                      <input type="text" id="datepicker-input2" aria-label="Date-Time">
+                      <div class="datepicker-container"  id="datepicker-input2-container"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="col_2cell">
+                  <p>생산기관</p>
+                  <div class="rowbox select_input_box">
+                    <label class="hide">생산년도 선택</label>
+                    <select class="select_box" required>
+                      <option value="" disabled selected>전체</option>
+                      <option value="">10건</option>
+                      <option value="">100건</option>
+                    </select>
+                    <input type="text" placeholder="처리과를 입력해주세요.">
                   </div>
                 </li>
                 <li>
-                  <p>권(호)</p>
+                  <p>검색어1</p>
                   <div class="rowbox">
                     <input type="text" placeholder="">
                   </div>
-                </li> 
-                <li>
-                  <p>보존기간</p>
-                  <div class="rowbox">
-                    <label class="hide">보존기간 선택</label>
-                    <select class="select_box" required>
-                      <option value="" disabled selected>전체</option>
-                      <option value="">10년</option>
-                      <option value="">20년</option>
-                    </select>
-                  </div>
                 </li>
                 <li>
-                  <p>보존상자번호</p>
+                  <p>검색어2</p>
                   <div class="rowbox">
                     <input type="text" placeholder="">
                   </div>
@@ -388,87 +325,156 @@
               </div>
             </div>
 
-            <div class="grid_board">
-              <div id="grid_tale1"></div>
-              <div id="grid_pagination1" class="tui-pagination"></div>
-              <!-- 퍼블리싱 더미 데이터 - 나중에 삭제 -->
-              <script src="../test/grid_data_sample.js"></script>
-              <!-- 퍼블리싱 더미 데이터 - 나중에 삭제 -->
-              <script>
-                $(function(){
-                  const grid1 = new tui.Grid({
-                    el: document.getElementById("grid_tale1"),
-                    scrollX: true,
-                    scrollY: false,
-                    rowHeaders: ['checkbox'],
-                    columns: [
-                      { name: "column1", header: "생산년도", sortable: true, width: 80, align: 'center' },
-                      { name: "column2", header: "제목", sortable: true, minWidth : 180, align: 'left' }, 
-                      { name: "column3", header: "관리번호", sortable: true, width: 160, align: 'center' },
-                      { name: "column4", header: "부서명", sortable: true, align: 'center' },
-                      { name: "column5", header: "반출여부", sortable: true, width: 80,  align: 'center' },
-                      { name: "column6", header: "박스위치", sortable: true, align: 'center' },
-                      { name: "column7", header: "보존기간", sortable: true, width: 80, align: 'center' },
-                    ],
-                    columnOptions: {
-                      resizable: true,
-                      minWidth: 80 
-                    }
-                  });
-                  tuiGridApplyTheme();
-                  
-                  // pagination
-                  var pagination1 = new tui.Pagination('grid_pagination1', {
-                      totalItems: 500,
-                      itemsPerPage: 10,
-                      visiblePages: 5
-                  });
-                  grid1.resetData(grid_data_sample.slice(0, 10));
-                });
-              </script>
+            <div class="area_title">
+              <h4>
+                <span class="sub_title">시청각 기록물</span>
+                <span class="sub_script">
+                  총 <span class="num">1,547</span>건
+                </span>
+              </h4>
             </div>
 
-            <div class="btn_grp btn_right">
-              <div class="type_grp">
-                <button type="button" class="btn_def btn_point_clr">수정</button>
-                <button type="button" class="btn_def btn_red_clr">삭제</button>
-              </div>
-              <div class="type_grp">
-                <button type="button" class="btn_def btn_darkgray">출력</button>
-              </div>              
-              <div class="type_grp">
-                <button type="button" class="btn_def btn_line_black">열람 펼치기</button>
-                <button type="button" class="btn_def btn_line_black">반출 펼치기</button>
-              </div>
-              <div class="type_grp">
-                <button type="button" class="btn_def btn_gray">닫기</button>
-              </div>
+            <div class="img_board">
+              <ul>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>이미지 타이틀</p>
+                      <div>
+                        <p>문화예술과</p>
+                        <span>2005년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>이미지 타이틀</p>
+                      <div>
+                        <p>문화예술과</p>
+                        <span>2005년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>이미지 타이틀</p>
+                      <div>
+                        <p>문화예술과</p>
+                        <span>2005년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>이미지 타이틀</p>
+                      <div>
+                        <p>문화예술과</p>
+                        <span>2005년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>이미지 타이틀</p>
+                      <div>
+                        <p>문화예술과</p>
+                        <span>2005년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>이미지 타이틀</p>
+                      <div>
+                        <p>문화예술과</p>
+                        <span>2005년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>이미지 타이틀</p>
+                      <div>
+                        <p>문화예술과</p>
+                        <span>2005년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>이미지 타이틀</p>
+                      <div>
+                        <p>문화예술과</p>
+                        <span>2005년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
             </div>
 
           </div>
-
+        
         </div>
-      </div>
-
-      <!-- popup : 이미지 슬라이드 팝업 -->
-      <div id="popup_frame3" class="popup_frame">
-        <div class="popup_wrap">
-          <div class="pop_title">
-            <h5>상세보기</h5>
-            <button type="button" class="btn_x">
-              <span class="hide">닫기</span>
-              <i class="icon_x"></i>
-            </button>
-          </div>
-
-          <div class="pop_content">
-            popup_frame3 <br>
-            이미지 슬라이드 팝업 내용이 들어갑니다.
-          </div>
-
-        </div>
-      </div>
-
-    </div>    
+      </main>
+    </div>
+    <div id="datepicker_wrapper" style="margin-top: -1px;"></div>
+    <script>
+      $(function(){
+        var datepicker = new tui.DatePicker('#datepicker-input1-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input1',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        var datepicker2 = new tui.DatePicker('#datepicker-input2-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input2',
+                format: 'yyyy-MM-dd'
+            }
+        });
+      });
+    </script>
   </body>
+  
 </html>
