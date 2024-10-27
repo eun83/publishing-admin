@@ -29,7 +29,7 @@
 
     <!-- js -->
     <script src="../lib/jquery/jquery.min.js"></script>
-    <script src="../lib/slick/slick.js"></script>
+    <script src="../lib/slick/slick.min.js"></script>
     <script src="../lib/tui-date-picker/tui-date-picker.min.js"></script>
     <script src="../lib/tui-grid/tui-grid.min.js"></script>
     <script src="../lib/tui-pagination/tui-pagination.min.js"></script>
@@ -362,7 +362,8 @@
             <div class="img_board">
               <ul>
                 <li>
-                  <a href="#">
+                  <!-- 첫번째만 팝업 연결 -->
+                  <a href="#" class="btn_model" model_target="#popup_frame3">
                     <div class="img_box">
                       <img src="../images/board_img01.jpg" alt="">
                     </div>
@@ -493,6 +494,150 @@
         
         </div>
       </main>
+
+      <!-- popup : 이미지 슬라이드 팝업 -->
+      <div id="popup_frame3" class="popup_frame">
+        <div class="popup_wrap">
+          <div class="pop_title">
+            <h5>상세보기</h5>
+            <button type="button" class="btn_x btn_close">
+              <span class="hide">닫기</span>
+              <i class="icon_x"></i>
+            </button>
+          </div>
+
+          <div class="pop_content">
+            <div class="img_pop">
+              <div class="img_slider">
+                <!-- 큰 이미지 -->
+                <div class="slider_for">
+                  <div><img src="../images/board_img01.jpg"></div>
+                  <div><img src="../images/board_img02.jpg"></div>
+                  <div><img src="../images/board_img03.jpg"></div>
+                  <div><img src="../images/board_img04.jpg"></div>
+                  <div><img src="../images/board_img05.jpg"></div>
+                  <div><img src="../images/board_img06.jpg"></div>
+                  <div><img src="../images/board_img07.jpg"></div>
+                </div>
+                <!-- 썸네일 -->
+                <div class="slider_nav thumbnail">
+                  <div><img src="../images/board_img01_thumb.jpg"></div>
+                  <div><img src="../images/board_img02_thumb.jpg"></div>
+                  <div><img src="../images/board_img03_thumb.jpg"></div>
+                  <div><img src="../images/board_img04_thumb.jpg"></div>
+                  <div><img src="../images/board_img05_thumb.jpg"></div>
+                  <div><img src="../images/board_img06_thumb.jpg"></div>
+                  <div><img src="../images/board_img07_thumb.jpg"></div>
+                </div>
+
+              </div>
+              <div class="img_info">
+                <div>
+                  <div class="area_title">
+                    <h4>
+                      <span class="sub_title">시청각물 정보</span>
+                    </h4>              
+                  </div>
+                  <!-- row table -->
+                  <div class="table_wrap">
+                    <table class="row_table">
+                      <caption class="hide">row table</caption>
+                      <colgroup>
+                        <col style="width: 25%;">
+                        <col style="width: 75%;">
+                      </colgroup>                
+                      <tbody>
+                        <tr>
+                          <th scope="row">관리번호</th>
+                          <td>42000085-9999-영구-1</td>
+                        </tr>               
+                        <tr>
+                          <th scope="row">분류</th>
+                          <td>사진/필름류</td>
+                        </tr>               
+                        <tr>
+                          <th scope="row">처리과</th>
+                          <td>
+                            <div class="rowbox">
+                              <input type="text" placeholder="강릉시">
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">제목</th>
+                          <td>
+                            <div class="rowbox">
+                              <input type="text" placeholder="농업기술 새해설계교육">
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">생산연도</th>
+                          <td>
+                            <div class="rowbox">
+                              <input type="text" placeholder="2006">
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">상세설명</th>
+                          <td>
+                            <div class="rowbox">
+                              <textarea rows="1" oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'>상세 설명글이 들어갑니다.</textarea>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <div class="btn_grp btn_right">              
+                    <div class="type_grp type_single">
+                      <button type="button" class="btn_def btn_point_clr">수정</button>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div>
+                  <div class="area_title">
+                    <h4>
+                      <span class="sub_title">파일 정보</span>
+                    </h4>              
+                  </div>
+                  <!-- row table -->
+                  <div class="table_wrap">
+                    <table class="row_table">
+                      <caption class="hide">row table</caption>
+                      <colgroup>
+                        <col style="width: 25%;">
+                        <col style="width: 75%;">
+                      </colgroup>                
+                      <tbody>
+                        <tr>
+                          <th scope="row">파일명</th>
+                          <td>2006-1-10_농업기술새해설계교육_농업기술교육001.jpg</td>
+                        </tr>               
+                        <tr>
+                          <th scope="row">용량</th>
+                          <td>17KB</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="btn_grp btn_right">              
+              <div class="type_grp type_single">
+                <button type="button" class="btn_close btn_def btn_gray">닫기</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
       
     </div>
     <div id="datepicker_wrapper" style="margin-top: -1px;"></div>
