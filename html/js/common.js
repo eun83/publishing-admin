@@ -88,6 +88,7 @@ $(function(){
   updateLeftbMenu();
   updateGnbMenu();
 
+  // img slider
   $('.slider_for').slick({
     slidesToShow: 1,
     slidesToScroll: 1,

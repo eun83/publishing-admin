@@ -2,14 +2,50 @@
 
 /* var() */
 :root {
+  
+  /* 추천컬러조합 1 */
+  /*   
+  --clr_main: #2b5261;
+  --clr_point: #2e7793;
+  --clr_red: #e96546;
+  --clr_bg_point: #ebeff0; 
+  */
+
+  /* 추천컬러조합 2 */
+  /*   
+  --clr_main: #3c4f64;
+  --clr_point: #4e729a;
+  --clr_red: #e94647;
+  --clr_bg_point: #eceeef;  
+  */
+
+  /* 추천컬러조합 3 */
+  /*   
+  --clr_main: #354339;
+  --clr_point: #3f5c47;
+  --clr_red: #e96046;
+  --clr_bg_point: #ecedec;  
+  */
+
+  /* 추천컬러조합 4 */
+  /*   
+  --clr_main: #423963;
+  --clr_point: #5a4898;
+  --clr_red: #e94670;
+  --clr_bg_point: #eeecf0;  
+  */
+
+  /* 기본 컬러 */
+  /* 
+  */
   --clr_main: #383c75;
   --clr_point: #444cb7;
-  --clr_darkgray: #111;
-  --clr_gray: #666;
   --clr_red: #e84747;
+  --clr_bg_point: #ecedf1;
 
   --clr_bg_gray: #f5f5f5;
-  --clr_bg_point: #ecedf1;
+  --clr_darkgray: #111;
+  --clr_gray: #666;
 
   --clr_font: #222;
 
