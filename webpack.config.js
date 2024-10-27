@@ -15,6 +15,15 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 { 
+                    from: path.resolve(__dirname, 'node_modules/jquery/dist'),
+                    to: 'lib/jquery',
+                    globOptions: {
+                        dot: false,
+                        gitignore: false,
+                        ignore: ['**/*.LICENSE.txt']
+                    }
+                },
+                { 
                     from: path.resolve(__dirname, 'node_modules/tui-grid/dist'),
                     to: 'lib/tui-grid',
                     globOptions: {
@@ -56,7 +65,16 @@ module.exports = {
                     globOptions: {
                         dot: false,
                         gitignore: false,
-                        ignore: ['**/*.LICENSE.txt']
+                        ignore: ['**/*.LICENSE.txt', '**/esm']
+                    }
+                },
+                { 
+                    from: path.resolve(__dirname, 'node_modules/slick-carousel/slick'),
+                    to: 'lib/slick',
+                    globOptions: {
+                        dot: false,
+                        gitignore: false,
+                        ignore: ['**/*.LICENSE.txt', '**/*.scss', '**/*.less', '**/config.rb']
                     }
                 }
             ],
