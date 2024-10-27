@@ -1,6 +1,6 @@
 
 $(function(){
-  $('.btn_left_tgl').on('click', function(){
+  $('.btn_left_tgl').click(function(){
     let body = $('body');
     if(body.hasClass('folding')){
         body.removeClass('folding');
@@ -13,17 +13,17 @@ $(function(){
   });
 
   // 모바일 메뉴 열기
-  $('.m_btn_menu').on('click', function(){
+  $('.m_btn_menu').click(function(){
     $('.top_frame .m_menu').addClass('open');
   });
 
   // 모바일 메뉴 닫기
-  $('.m_btn_x').on('click', function(){
+  $('.m_btn_x').click(function(){
     $('.top_frame .m_menu').removeClass('open');
   })
 
   // 모바일 메뉴 토글 (애니메이션 효과를 위해 slide 효과용)
-  $('.m_gnb a').on('click', function(){
+  $('.m_gnb a').click(function(){
     var me = $(this);
     var href = me.attr('href');
     if(href == '' || href == '#'){
@@ -45,7 +45,7 @@ $(function(){
   })
 
   
-  $('.btn_model[model_target]').on('click', function(){
+  $('.btn_model[model_target]').click(function(){
     var model_target = $(this).attr('model_target');
     if(model_target != ''){
       const target = $(model_target);
@@ -54,19 +54,15 @@ $(function(){
     }
   });
 
-  $('.popup_frame .btn_x').on('click', function(){
+  $('.popup_frame .btn_close').click(function(){
     $(this).closest('.popup_frame').removeClass('on');
   });  
 
-  $('.popup_frame .btn_close').on('click', function(){
-    $(this).closest('.popup_frame').removeClass('on');
-  }); 
-
-  $('.dialog_pop .btn_x').on('click', function(){
+  $('.dialog_pop .btn_close').click(function(){
     $(this).closest('.dialog_pop').remove();
   });
 
-  $('.card_box [control-area]').on('click', function(){
+  $('.card_box [control-area]').click(function(){
     const button = $(this);
     const control_area_id = button.attr('control-area');
     if(control_area_id == ''){
