@@ -9,7 +9,7 @@
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>template</title>
+    <title>component_팝업창</title>
 
     <!--favicon-->
     <!--  
@@ -19,13 +19,16 @@
     -->
 
     <!-- css -->
-    <link rel="stylesheet" href="../lib/tui-date-picker/tui-date-picker.min.css" />
     <link rel="stylesheet" href="../lib/tui-grid/tui-grid.min.css" />
     <link rel="stylesheet" href="../lib/tui-pagination/tui-pagination.min.css" />
+
+    <!-- slick cdn -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
 
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/component.css" />
+
 
     <!-- js -->
     <script
@@ -33,13 +36,18 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
-    <script src="../lib/tui-date-picker/tui-date-picker.min.js"></script>
+
+    <!-- slick cdn -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
     <script src="../lib/tui-grid/tui-grid.min.js"></script>
     <script src="../lib/tui-pagination/tui-pagination.min.js"></script>
-    
     <script src="../js/common.js"></script>
     <script src="../js/tui.js"></script>
     <!-- 퍼블리싱 편의용 나중에 삭제 --><script src="../js/debug.js"></script><!-- 퍼블리싱 편의용 나중에 삭제 -->
+    
+    
+
   </head>
   <body>
     <div class="skipmenu">
@@ -286,7 +294,7 @@
       <main class="work_frame">
         <div class="content_wrap">
           <div class="content_title">
-            <h3 class="page_title">반출</h3>
+            <h3 class="page_title">테이블 팝업</h3>
             <ol class="page_breadcrumb">
               <li>HOME</li>
               <li><a href="#">1depth</a></li>
@@ -296,41 +304,90 @@
           </div>
         
           <div class="content_area">
+            
+            <div class="area_title">
+              <h4 class="left_grp">
+                <span class="sub_title">검색 테이블 팝업</span>
+              </h4>
+            </div>
+            <button type="button" class="btn_def btn_point_clr btn_model" model_target="#popup_frame2">검색 테이블 팝업 보기</button>
 
+            <hr style="margin: 45px 0;">
+
+            <div class="area_title">
+              <h4 class="left_grp">
+                <span class="sub_title">이미지게시판 팝업</span>
+                <span class="sub_script">
+                  권장 이미지 사이즈 : 1000 x 667 / 800 x 534
+                </span>
+              </h4>
+            </div>
+            <button type="button" class="btn_def btn_point_clr btn_model" model_target="#popup_frame3">이미지게시판 팝업 보기</button>
+
+          </div>
+        
+        </div>
+      </main>
+
+      <!-- div.wrap 안에 위치합니다. -->
+
+      <!-- popup : 게시판 팝업 -->
+      <div id="popup_frame2" class="popup_frame">
+        <div class="popup_wrap">
+          <div class="pop_title">
+            <h5>상세보기</h5>
+            <button type="button" class="btn_x">
+              <span class="hide">닫기</span>
+              <i class="icon_x"></i>
+            </button>
+          </div>
+
+          <div class="pop_content">
             <!-- search box type ex1 : 기본 4칸 + 버튼영역 -->
             <div class="search_wrap">
               <ul>
                 <li>
-                  <p>반납예정일자</p>
+                  <p>철 제목</p>
+                  <div class="rowbox">
+                    <input type="text" placeholder="">
+                  </div>
+                </li>
+                <li>
+                  <p>생산부서</p>
+                  <div class="rowbox">
+                    <input type="text" placeholder="">
+                  </div>
+                </li>                
+                <li>
+                  <p>생산년도</p>
                   <div class="rowbox date_box">
                     <div>
-                      <input type="text" id="datepicker-input1">
+                      <input type="text" id="datepicker-input1" aria-label="Date-Time">
                       <div class="datepicker-container" id="datepicker-input1-container"></div>
                     </div>
                   </div>
                 </li>
                 <li>
-                  <p>반출신청사유</p>
+                  <p>권(호)</p>
                   <div class="rowbox">
-                    <input type="text" placeholder="사유">
+                    <input type="text" placeholder="">
+                  </div>
+                </li> 
+                <li>
+                  <p>보존기간</p>
+                  <div class="rowbox">
+                    <label class="hide">보존기간 선택</label>
+                    <select class="select_box" required>
+                      <option value="" disabled selected>전체</option>
+                      <option value="">10년</option>
+                      <option value="">20년</option>
+                    </select>
                   </div>
                 </li>
                 <li>
-                  <p>대출자 소속</p>
+                  <p>보존상자번호</p>
                   <div class="rowbox">
-                    <input type="text" placeholder="대출자 소속">
-                  </div>
-                </li>
-                <li>
-                  <p>대출자 직급</p>
-                  <div class="rowbox">
-                    <input type="text" placeholder="대출자 직급">
-                  </div>
-                </li>
-                <li>
-                  <p>대출자 성명</p>
-                  <div class="rowbox">
-                    <input type="text" placeholder="대출자 성명">
+                    <input type="text" placeholder="">
                   </div>
                 </li>
               </ul>
@@ -343,34 +400,16 @@
               </div>
             </div>
 
-            <div class="area_title">
-              <h4 class="left_grp">
-                <span class="sub_title">조회결과</span>
-                <span class="sub_script">
-                  총 건수: <span class="num">10</span>건
-                </span>
-              </h4>
-              <div class="right_grp btn_grp">
-                <div class="type_grp">
-                  <button type="button" class="btn_def btn_point_clr">기록물 추가</button>
-                  <button type="button" class="btn_def btn_main_clr">반출하기</button>
-                </div>
-                <div class="type_grp">
-                  <button type="button" class="btn_def btn_gray">테이블 설정<i class="icon_setting"></i></button>
-                </div>
-              </div>
-            </div>
-            
             <div class="grid_board">
-              <div id="grid_tale"></div>
-              <div id="grid_pagination" class="tui-pagination"></div>
+              <div id="grid_tale1"></div>
+              <div id="grid_pagination1" class="tui-pagination"></div>
               <!-- 퍼블리싱 더미 데이터 - 나중에 삭제 -->
               <script src="../test/grid_data_sample.js"></script>
               <!-- 퍼블리싱 더미 데이터 - 나중에 삭제 -->
               <script>
                 $(function(){
                   const grid1 = new tui.Grid({
-                    el: document.getElementById("grid_tale"),
+                    el: document.getElementById("grid_tale1"),
                     scrollX: true,
                     scrollY: false,
                     rowHeaders: ['checkbox'],
@@ -391,7 +430,7 @@
                   tuiGridApplyTheme();
                   
                   // pagination
-                  var pagination1 = new tui.Pagination('grid_pagination', {
+                  var pagination1 = new tui.Pagination('grid_pagination1', {
                       totalItems: 500,
                       itemsPerPage: 10,
                       visiblePages: 5
@@ -400,25 +439,173 @@
                 });
               </script>
             </div>
-            
+
+            <div class="btn_grp btn_right">
+              <div class="type_grp">
+                <button type="button" class="btn_def btn_point_clr">수정</button>
+                <button type="button" class="btn_def btn_red_clr">삭제</button>
+              </div>
+              <div class="type_grp">
+                <button type="button" class="btn_def btn_darkgray">출력</button>
+              </div>              
+              <div class="type_grp">
+                <button type="button" class="btn_def btn_line_black">열람 펼치기</button>
+                <button type="button" class="btn_def btn_line_black">반출 펼치기</button>
+              </div>
+              <div class="type_grp">
+                <button type="button" class="btn_def btn_gray">닫기</button>
+              </div>
+            </div>
 
           </div>
-        
+
         </div>
-      </main>
-    </div>
-    <div id="datepicker_wrapper" style="margin-top: -1px;"></div>
-    <script>
-      $(function(){
-        var datepicker = new tui.DatePicker('#datepicker-input1-container', {
-            date: new Date(),
-            input: {
-                element: '#datepicker-input1',
-                format: 'yyyy-MM-dd'
-            }
-        });
-      });
-    </script>
+      </div>
+
+      <!-- popup : 이미지 슬라이드 팝업 -->
+      <div id="popup_frame3" class="popup_frame">
+        <div class="popup_wrap">
+          <div class="pop_title">
+            <h5>상세보기</h5>
+            <button type="button" class="btn_x">
+              <span class="hide">닫기</span>
+              <i class="icon_x"></i>
+            </button>
+          </div>
+
+          <div class="pop_content">
+            <div class="img_pop">
+              <div class="img_slider">
+                <!-- 큰 이미지 -->
+                <div class="slider_for">
+                  <div><img src="../images/board_img01.jpg"></div>
+                  <div><img src="../images/board_img02.jpg"></div>
+                  <div><img src="../images/board_img03.jpg"></div>
+                  <div><img src="../images/board_img04.jpg"></div>
+                  <div><img src="../images/board_img05.jpg"></div>
+                  <div><img src="../images/board_img06.jpg"></div>
+                  <div><img src="../images/board_img07.jpg"></div>
+                </div>
+                <!-- 썸네일 -->
+                <div class="slider_nav thumbnail">
+                  <div><img src="../images/board_img01.jpg"></div>
+                  <div><img src="../images/board_img02.jpg"></div>
+                  <div><img src="../images/board_img03.jpg"></div>
+                  <div><img src="../images/board_img04.jpg"></div>
+                  <div><img src="../images/board_img05.jpg"></div>
+                  <div><img src="../images/board_img06.jpg"></div>
+                  <div><img src="../images/board_img07.jpg"></div>
+                </div>
+
+              </div>
+              <div class="img_info">
+                <div>
+                  <div class="area_title">
+                    <h4>
+                      <span class="sub_title">시청각물 정보</span>
+                    </h4>              
+                  </div>
+                  <!-- row table -->
+                  <div class="table_wrap">
+                    <table class="row_table">
+                      <caption class="hide">row table</caption>
+                      <colgroup>
+                        <col style="width: 25%;">
+                        <col style="width: 75%;">
+                      </colgroup>                
+                      <tbody>
+                        <tr>
+                          <th scope="row">관리번호</th>
+                          <td>42000085-9999-영구-1</td>
+                        </tr>               
+                        <tr>
+                          <th scope="row">분류</th>
+                          <td>사진/필름류</td>
+                        </tr>               
+                        <tr>
+                          <th scope="row">처리과</th>
+                          <td>
+                            <div class="rowbox">
+                              <input type="text" placeholder="강릉시">
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">제목</th>
+                          <td>
+                            <div class="rowbox">
+                              <input type="text" placeholder="농업기술 새해설계교육">
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">생산연도</th>
+                          <td>
+                            <div class="rowbox">
+                              <input type="text" placeholder="2006">
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">상세설명</th>
+                          <td>
+                            <div class="rowbox">
+                              <textarea rows="1" oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'>상세 설명글이 들어갑니다.</textarea>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <div class="btn_grp btn_right">              
+                    <div class="type_grp type_single">
+                      <button type="button" class="btn_def btn_point_clr">수정</button>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div>
+                  <div class="area_title">
+                    <h4>
+                      <span class="sub_title">파일 정보</span>
+                    </h4>              
+                  </div>
+                  <!-- row table -->
+                  <div class="table_wrap">
+                    <table class="row_table">
+                      <caption class="hide">row table</caption>
+                      <colgroup>
+                        <col style="width: 25%;">
+                        <col style="width: 75%;">
+                      </colgroup>                
+                      <tbody>
+                        <tr>
+                          <th scope="row">파일명</th>
+                          <td>2006-1-10_농업기술새해설계교육_농업기술교육001.jpg</td>
+                        </tr>               
+                        <tr>
+                          <th scope="row">용량</th>
+                          <td>17KB</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="btn_grp btn_right">              
+              <div class="type_grp type_single">
+                <button type="button" class="btn_def btn_gray">닫기</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>    
   </body>
-  
 </html>

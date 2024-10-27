@@ -9,7 +9,7 @@
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>component_표타입table</title>
+    <title>component_이미지게시판</title>
 
     <!--favicon-->
     <!--  
@@ -19,8 +19,11 @@
     -->
 
     <!-- css -->
+    <link rel="stylesheet" href="../lib/tui-date-picker/tui-date-picker.min.css" />
     <link rel="stylesheet" href="../lib/tui-grid/tui-grid.min.css" />
     <link rel="stylesheet" href="../lib/tui-pagination/tui-pagination.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
 
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/common.css" />
@@ -32,8 +35,13 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+    <script src="../lib/tui-date-picker/tui-date-picker.min.js"></script>
     <script src="../lib/tui-grid/tui-grid.min.js"></script>
     <script src="../lib/tui-pagination/tui-pagination.min.js"></script>
+    
     <script src="../js/common.js"></script>
     <script src="../js/tui.js"></script>
     <!-- 퍼블리싱 편의용 나중에 삭제 --><script src="../js/debug.js"></script><!-- 퍼블리싱 편의용 나중에 삭제 -->
@@ -239,31 +247,37 @@
       <aside class="left_frame">
         <ul class="left_menu left_dp1">
           <li>
-            <a href="./01_component_search.html" title="컴포넌트">컴포넌트</a>
+            <a href="./02_template_type01.html" title="템플릿">템플릿</a>
             <ul class="left_dp2">
+              <li class="">
+                <a href="./02_template_type_popup.html" title="PPT 화면 모음 : 추가">PPT 화면 모음 : 추가</a>
+                <ul class="left_dp3">
+                  <li><a href="./00_login.html" target="_blank">로그인 페이지:새창</a></li>
+                  <li><a href="./02_template_type_popup.html" title="팝업">팝업</a></li>
+                  <li><a href="./02_template_type_imgbd.html" title="이미지 게시판">이미지 게시판</a></li>
+                </ul>
+              </li>
               <li class="" >
-                <a href="./01_component_search.html" title="컴포넌트 UI">컴포넌트 UI</a>
+                <a href="./02_template_type01.html" title="PPT 화면 모음">PPT 화면 모음</a>
                 <ul class="left_dp3">
-                  <li><a href="./01_component_dashboard.html" title="대시보드">대시보드</a></li>
-                  <li><a href="./01_component_search.html" title="검색박스">검색박스</a></li>
-                  <li><a href="./01_component_table.html" title="표 타입 table">표 타입 table</a></li>
-                  <li><a href="./01_component_imagebd.html" title="이미지 게시판">이미지 게시판</a></li>
-                        <li><a href="./01_component_popup.html" title="팝업 모음">팝업 모음</a></li>
-                  <li><a href="./01_component_dialog.html" title="다이알로그 알림창">다이알로그 알림창</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="./01_component_tui01.html" title="그리드 : TUI그리드" class="">그리드 : TUI그리드</a>
-                <ul class="left_dp3">
-                  <li><a href="./01_component_tui01.html" title="Type 01">Type 01</a></li>
-                  <li><a href="./01_component_tui02.html" title="Type 02">Type 02</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="./00_login.html" title="로그인/레이아웃" target="_blank">로그인/레이아웃</a>
-                <ul class="left_dp3">
-                  <li><a href="./00_login.html" title="로그인 페이지:새창" target="_blank">로그인 페이지:새창</a></li>
-                  <li><a href="./00_layout.html" title="참고용 레이아웃:새창" target="_blank">참고용 레이아웃:새창</a></li>
+                  <li><a href="./02_template_type01.html" title="비전자기록물 검색">비전자기록물 검색</a></li>
+                  <li><a href="./02_template_type02.html" title="대출관리-반입반출현황">대출관리-반입반출현황</a></li>
+                  <li><a href="./02_template_type03.html" title="대출관리-반입반출신청현황">대출관리-반입반출신청현황</a></li>
+                  <li><a href="./02_template_type04.html" title="대출관리-반입">대출관리-반입</a></li>
+                  <li><a href="./02_template_type05.html" title="대출관리-반출">대출관리-반출</a></li>
+                  <li><a href="./02_template_type06.html" title="열람">열람</a></li>
+                  <li><a href="./02_template_type07.html" title="열람조회">열람조회</a></li>
+                  <li><a href="./02_template_type08.html" title="기록물 폐기 관리-만료">기록물 폐기 관리-만료</a></li>
+                  <li><a href="./02_template_type09.html" title="기록물 폐기 관리-보류">기록물 폐기 관리-보류</a></li>
+                  <li><a href="./02_template_type10.html" title="기록물 폐기 관리-폐기의견등록">기록물 폐기 관리-폐기의견등록</a></li>
+                  <li><a href="./02_template_type11.html" title="기록물 폐기 관리-폐기리스트">기록물 폐기 관리-폐기리스트</a></li>
+                  <li><a href="./02_template_type12.html" title="시스템관리-공지사항">시스템관리-공지사항</a></li>
+                  <li><a href="./02_template_type13.html" title="시스템관리-권한관리">시스템관리-권한관리</a></li>
+                  <li><a href="./02_template_type14.html" title="시스템관리-사용자관리">시스템관리-사용자관리</a></li>
+                  <li><a href="./02_template_type15.html" title="시스템관리-사용자 상세페이지">시스템관리-사용자 상세페이지</a></li>
+                  <li><a href="./02_template_type16.html" title="시스템관리-처리과관리">시스템관리-처리과관리</a></li>
+                  <li><a href="./02_template_type17.html" title="시스템관리-로고관리">시스템관리-로고관리</a></li>
+                  <li><a href="./02_template_type18.html" title="시스템관리-기록물 현황 통계">시스템관리-기록물 현황 통계</a></li>
                 </ul>
               </li>
             </ul>
@@ -275,11 +289,9 @@
       </aside>
 
       <main class="work_frame">
-        
-        <!-- 권한 관리 -->
         <div class="content_wrap">
           <div class="content_title">
-            <h3 class="page_title">권한 관리</h3>
+            <h3 class="page_title">특수유형기록물 검색</h3>
             <ol class="page_breadcrumb">
               <li>HOME</li>
               <li><a href="#">1depth</a></li>
@@ -289,259 +301,228 @@
           </div>
         
           <div class="content_area">
-            
-            <!-- 권한관리 테이블 -->
-            <div class="table_wrap">
-              <table class="align_center">
-                <caption class="hide">table</caption>
-                <colgroup>
-                  <col style="width: 50%;">
-                  <col style="width: 50%;">
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th scope="col">메뉴명</th>
-                    <th scope="col">권한</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>반입반출</td>
-                    <td>
-                      <div class="rowbox">
-                        <label class="hide">반입반출 선택</label>
-                        <select class="select_box" required>
-                          <option value="" disabled selected>시스템 담당자</option>
-                          <option value="">담당자1</option>
-                          <option value="">담당자2</option>
-                        </select>
-                      </div>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>열람</td>
-                    <td>
-                      <div class="rowbox">
-                        <label class="hide">열람 선택</label>
-                        <select class="select_box" required>
-                          <option value="" disabled selected>시스템 담당자</option>
-                          <option value="">담당자1</option>
-                          <option value="">담당자2</option>
-                        </select>
-                      </div>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>비전자기록물검색</td>
-                    <td>
-                      <div class="rowbox">
-                        <label class="hide">비전자기록물 선택</label>
-                        <select class="select_box" required>
-                          <option value="" disabled selected>일반사용자</option>
-                          <option value="">사용자1</option>
-                          <option value="">사용자2</option>
-                        </select>
-                      </div>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>특수유형기록물 검색</td>
-                    <td>
-                      <div class="rowbox">
-                        <label class="hide">특수유형기록물 검색 선택</label>
-                        <select class="select_box" required>
-                          <option value="" disabled selected>일반사용자</option>
-                          <option value="">사용자1</option>
-                          <option value="">사용자2</option>
-                        </select>
-                      </div>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>기록물 폐기관리</td>
-                    <td>
-                      <div class="rowbox">
-                        <label class="hide">기록물 폐기관리 선택</label>
-                        <select class="select_box" required>
-                          <option value="" disabled selected>일반사용자</option>
-                          <option value="">사용자1</option>
-                          <option value="">사용자2</option>
-                        </select>
-                      </div>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>시스템관리</td>
-                    <td>
-                      <div class="rowbox">
-                        <label class="hide">시스템관리 선택</label>
-                        <select class="select_box" required>
-                          <option value="" disabled selected>일반사용자</option>
-                          <option value="">사용자1</option>
-                          <option value="">사용자2</option>
-                        </select>
-                      </div>                      
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
 
-            <div class="btn_grp btn_center">              
-              <div class="type_grp type_single">
-                <button type="button" class="btn_def btn_main_clr">저장</button>
+            <!-- search box -->
+            <div class="search_wrap">
+              <ul>
+                <li>
+                  <p>철 제목</p>
+                  <div class="rowbox">
+                    <input type="text" placeholder="">
+                  </div>
+                </li>
+                <li>
+                  <p>생산년도</p>
+                  <div class="rowbox date_box">
+                    <div>
+                      <input type="text" id="datepicker-input1" aria-label="Date-Time">
+                      <div class="datepicker-container" id="datepicker-input1-container"></div>
+                    </div>
+                    <span>~</span>
+                    <div>
+                      <input type="text" id="datepicker-input2" aria-label="Date-Time">
+                      <div class="datepicker-container"  id="datepicker-input2-container"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="col_2cell">
+                  <p>생산기관</p>
+                  <div class="rowbox select_input_box">
+                    <label class="hide">생산년도 선택</label>
+                    <select class="select_box" required>
+                      <option value="" disabled selected>전체</option>
+                      <option value="">10건</option>
+                      <option value="">100건</option>
+                    </select>
+                    <input type="text" placeholder="처리과를 입력해주세요.">
+                  </div>
+                </li>
+                <li>
+                  <p>검색어1</p>
+                  <div class="rowbox">
+                    <input type="text" placeholder="">
+                  </div>
+                </li>
+                <li>
+                  <p>검색어2</p>
+                  <div class="rowbox">
+                    <input type="text" placeholder="">
+                  </div>
+                </li>
+              </ul>
+
+              <div class="srch_btn">
+                <div class="type_grp type_single">
+                  <button type="button" class="btn_def btn_point_clr">조회</button>
+                  <button type="button" class="btn_def btn_red_clr">초기화</button>
+                </div>
               </div>
             </div>
 
-          </div>
-        </div>
-
-        <hr style="margin: 45px 0;">
-
-        <!-- 로고 관리 -->
-        <div class="content_wrap">
-          <div class="content_title">
-            <h3 class="page_title">로고 관리</h3>
-            <ol class="page_breadcrumb">
-              <li>HOME</li>
-              <li><a href="#">1depth</a></li>
-              <li><a href="#">2depth</a></li>
-              <li><a href="#">3depth</a></li>
-            </ol>
-          </div>
-        
-          <div class="content_area">
-            
-            <!-- 로고관리 테이블 -->
-            <div class="table_wrap">
-              <table class="align_center">
-                <caption class="hide">table</caption>
-                <colgroup>
-                  <col style="width: 20%;">
-                  <col style="width: 20%;">
-                  <col style="width: 20%;">
-                  <col style="width: 20%;">
-                  <col style="width: 20%;">
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th scope="col">기록관 ID</th>
-                    <th scope="col">로고이미지</th>
-                    <th scope="col">최종 수정일</th>
-                    <th scope="col">최종 수정자</th>
-                    <th scope="col">수정</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>000000001</td>
-                    <td><img src="../images/admin_logo.svg" alt="로고이미지"></td>
-                    <td>202409191t3755</td>
-                    <td>admin</td>
-                    <td><button type="button" class="btn_def btn_point_clr">수정</button></td>
-                  </tr>                  
-                </tbody>
-              </table>
-            </div>
-
-          </div>
-        </div>
-
-        <hr style="margin: 45px 0;">
-
-        <!-- 사용자 관리 -->
-        <div class="content_wrap">
-          <div class="content_title">
-            <h3 class="page_title">사용자 관리</h3>
-            <ol class="page_breadcrumb">
-              <li>HOME</li>
-              <li><a href="#">1depth</a></li>
-              <li><a href="#">2depth</a></li>
-              <li><a href="#">3depth</a></li>
-            </ol>
-          </div>
-        
-          <div class="content_area">
-          
             <div class="area_title">
               <h4>
-                <span class="sub_title">사용자 상세 페이지</span>
-                <span class="sub_script hide"> <!-- hide 클래스로 숨김가능 -->
-                  총 건수: <span class="num">10</span>건
+                <span class="sub_title">시청각 기록물</span>
+                <span class="sub_script">
+                  총 <span class="num">1,547</span>건
                 </span>
-              </h4>              
-            </div>
-            
-            <!-- 사용자 관리 테이블 -->
-            <div class="table_wrap">
-              <table class="row_table">
-                <caption class="hide">row table</caption>
-                <colgroup>
-                  <col style="width: 15%;">
-                  <col style="width: 35%;">
-                  <col style="width: 15%;">
-                  <col style="width: 35%;">
-                </colgroup>                
-                <tbody>
-                  <tr>
-                    <th scope="row">사용자 ID</th>
-                    <td>QQQ2</td>
-                    <th scope="row">사용자 이름</th>
-                    <td>홍길동</td>
-                  </tr>                  
-                  <tr>
-                    <th scope="row">직위</th>
-                    <td>1234</td>
-                    <th scope="row">직급</th>
-                    <td>1234</td>
-                  </tr>                  
-                  <tr>
-                    <th scope="row">사용여부</th>
-                    <td>사용</td>
-                    <th scope="row">메일 주소</th>
-                    <td>123@asdf.com</td>
-                  </tr>                  
-                  <tr>
-                    <th scope="row">등록일자</th>
-                    <td>2024-05-08</td>
-                    <th scope="row">최종 수정 일자</th>
-                    <td>2024-05-08</td>
-                  </tr>                  
-                  <tr>
-                    <th scope="row">비밀번호 변경</th>
-                    <td>
-                      <div class="rowbox">
-                        <input type="text" placeholder="">
-                      </div>
-                    </td>
-                    <th scope="row">권한</th>
-                    <td>
-                      <div class="rowbox">
-                        <label class="hide">시스템관리 선택</label>
-                        <select class="select_box" required>
-                          <option value="" disabled selected>일반사용자</option>
-                          <option value="">사용자1</option>
-                          <option value="">사용자2</option>
-                        </select>
-                      </div>
-                    </td>
-                  </tr>                  
-                </tbody>
-              </table>
+              </h4>
             </div>
 
-            <div class="btn_grp btn_center">              
-              <div class="type_grp type_single">
-                <button type="button" class="btn_def btn_point_clr">수정</button>
-                <button type="button" class="btn_def btn_red_clr">삭제</button>
-              </div>
+            <div class="img_board">
+              <ul>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="../images/board_img01.jpg" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>추곡워시기</p>
+                      <div class="txt_info">
+                        <p>문화예술과</p>
+                        <span>2005년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="../images/board_img02.jpg" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>농업기술 새해설계교육</p>
+                      <div class="txt_info">
+                        <p>강릉시</p>
+                        <span>2006년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="../images/board_img03.jpg" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>불우이웃돕기행사</p>
+                      <div class="txt_info">
+                        <p>강릉시</p>
+                        <span>2015년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="../images/board_img04.jpg" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>이웃돕기 성공전달(썬크루즈)</p>
+                      <div class="txt_info">
+                        <p>강릉시</p>
+                        <span>2015년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="../images/board_img05.jpg" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>시계박물관(타입스토리)</p>
+                      <div class="txt_info">
+                        <p>문화예술과</p>
+                        <span>2010년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box">
+                      <img src="../images/board_img06.jpg" alt="">
+                    </div>
+                    <div class="txt_box">
+                      <p>도심지교통 심포지엄(의회주관)</p>
+                      <div class="txt_info">
+                        <p>강릉시</p>
+                        <span>2008년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box no_img">
+                      
+                    </div>
+                    <div class="txt_box">
+                      <p>이미지 타이틀</p>
+                      <div class="txt_info">
+                        <p>해당처리과</p>
+                        <span>0000년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="img_box no_img">
+                      
+                    </div>
+                    <div class="txt_box">
+                      <p>이미지 타이틀</p>
+                      <div class="txt_info">
+                        <p>해당처리과</p>
+                        <span>0000년</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
             </div>
+
+            <div id="grid_pagination" class="tui-pagination"></div>
+            <script>
+              $(function(){
+                // pagination
+                var pagination1 = new tui.Pagination('grid_pagination', {
+                    totalItems: 500,
+                    itemsPerPage: 10,
+                    visiblePages: 5
+                });
+                grid1.resetData(grid_data_sample.slice(0, 10));
+              });
+            </script>
 
           </div>
-        </div>
         
-      </main>      
-
-    </div>    
+        </div>
+      </main>
+      
+    </div>
+    <div id="datepicker_wrapper" style="margin-top: -1px;"></div>
+    <script>
+      $(function(){
+        var datepicker = new tui.DatePicker('#datepicker-input1-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input1',
+                format: 'yyyy-MM-dd'
+            }
+        });
+        var datepicker2 = new tui.DatePicker('#datepicker-input2-container', {
+            date: new Date(),
+            input: {
+                element: '#datepicker-input2',
+                format: 'yyyy-MM-dd'
+            }
+        });
+      });
+    </script>
   </body>
+  
 </html>

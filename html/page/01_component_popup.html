@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../lib/tui-grid/tui-grid.min.css" />
     <link rel="stylesheet" href="../lib/tui-pagination/tui-pagination.min.css" />
 
+    <!-- slick cdn -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
 
     <link rel="stylesheet" href="../css/reset.css" />
@@ -35,7 +36,8 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
-    
+
+    <!-- slick cdn -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
 
     <script src="../lib/tui-grid/tui-grid.min.js"></script>
@@ -178,8 +180,11 @@
                     <li class="dp_arrow">
                       <a href="#">컴포넌트 UI</a> <!-- 하위메뉴가 있는 상위메뉴에는 링크주소 # 으로 -->
                       <ul class="m_gnb_dp3">
+                        <li><a href="./01_component_dashboard.html">대시보드</a></li>
                         <li><a href="./01_component_search.html">검색박스</a></li>
                         <li><a href="./01_component_table.html">표 타입 table</a></li>
+                        <li><a href="./01_component_imagebd.html">이미지 게시판</a></li>
+                        <li><a href="./01_component_popup.html">팝업 모음</a></li>
                         <li><a href="./01_component_dialog.html">다이알로그 알림창</a></li>
                       </ul>
                     </li>
@@ -190,11 +195,26 @@
                         <li><a href="./01_component_tui02.html">Type 02</a></li>
                       </ul>
                     </li>                    
+                    <li class="dp_arrow">
+                      <a href="#">로그인/레이아웃:새창</a>
+                      <ul class="m_gnb_dp3">
+                        <li><a href="./00_login.html" target="_blank">로그인 페이지:새창</a></li>
+                        <li><a href="./00_layout.html" target="_blank">참고용 레이아웃:새창</a></li>
+                      </ul>
+                    </li>                    
                   </ul>
                 </li>
                 <li class="dp_arrow">
                   <a href="#">템플릿</a>
                   <ul class="m_gnb_dp2">
+                    <li class="dp_arrow">
+                      <a href="#">PPT 화면 모음 : 추가</a>
+                      <ul class="m_gnb_dp3">
+                        <li><a href="./00_login.html" target="_blank">로그인 페이지:새창</a></li>
+                        <li><a href="./02_template_type_popup.html">팝업 모음</a></li>
+                        <li><a href="./02_template_type_imgbd.html">이미지 게시판</a></li>
+                      </ul>
+                    </li>                                        
                     <li class="dp_arrow">
                       <a href="#">PPT 화면 모음</a>
                       <ul class="m_gnb_dp3">
@@ -235,8 +255,11 @@
               <li class="" >
                 <a href="./01_component_search.html" title="컴포넌트 UI">컴포넌트 UI</a>
                 <ul class="left_dp3">
+                  <li><a href="./01_component_dashboard.html" title="대시보드">대시보드</a></li>
                   <li><a href="./01_component_search.html" title="검색박스">검색박스</a></li>
                   <li><a href="./01_component_table.html" title="표 타입 table">표 타입 table</a></li>
+                  <li><a href="./01_component_imagebd.html" title="이미지 게시판">이미지 게시판</a></li>
+                        <li><a href="./01_component_popup.html" title="팝업 모음">팝업 모음</a></li>
                   <li><a href="./01_component_dialog.html" title="다이알로그 알림창">다이알로그 알림창</a></li>
                 </ul>
               </li>
@@ -245,6 +268,13 @@
                 <ul class="left_dp3">
                   <li><a href="./01_component_tui01.html" title="Type 01">Type 01</a></li>
                   <li><a href="./01_component_tui02.html" title="Type 02">Type 02</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="./00_login.html" title="로그인/레이아웃" target="_blank">로그인/레이아웃</a>
+                <ul class="left_dp3">
+                  <li><a href="./00_login.html" title="로그인 페이지:새창" target="_blank">로그인 페이지:새창</a></li>
+                  <li><a href="./00_layout.html" title="참고용 레이아웃:새창" target="_blank">참고용 레이아웃:새창</a></li>
                 </ul>
               </li>
             </ul>
@@ -289,6 +319,9 @@
             <div class="area_title">
               <h4 class="left_grp">
                 <span class="sub_title">이미지게시판 팝업</span>
+                <span class="sub_script">
+                  권장 이미지 사이즈 : 1000 x 667 / 800 x 534
+                </span>
               </h4>
             </div>
             <button type="button" class="btn_def btn_point_clr btn_model" model_target="#popup_frame3">이미지게시판 팝업 보기</button>
@@ -312,6 +345,13 @@
 
           <div class="pop_content">
             popup_frame1 내용이 들어갑니다.
+
+            <div class="btn_grp btn_right">              
+              <div class="type_grp type_single">
+                <button type="button" class="btn_def btn_gray">닫기</button>
+              </div>
+            </div>
+            
           </div>
 
         </div>
@@ -536,9 +576,7 @@
                           <th scope="row">상세설명</th>
                           <td>
                             <div class="rowbox">
-                              
                               <textarea rows="1" oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'>상세 설명글이 들어갑니다.</textarea>
-                              <!-- <input type="text" placeholder="상세 설명글이 들어갑니다."> -->
                             </div>
                           </td>
                         </tr>
