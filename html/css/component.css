@@ -942,6 +942,11 @@ table.align_center,
   background-color: #f9f9f9;
   border-radius: 5px;
 }
+.notice_list li:hover,
+.notice_list li:active,
+.notice_list li:focus {
+  background-color: #f6f6f6;
+}
 .notice_list li:first-child {
   margin-top: 0;
 }
@@ -1303,6 +1308,7 @@ table.align_center,
   }
   .img_info hr {
     margin: 40px 0;
+    border-top: 1px solid #ccc;
   }
 
   /* login */
