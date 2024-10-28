@@ -759,6 +759,7 @@ table.align_center,
 }
 .img_info hr {
   margin: 20px 0;
+  border-top: 1px solid #ccc;
 }
 .img_pop + .btn_grp {
   margin-top: 20px;
@@ -1308,7 +1309,6 @@ table.align_center,
   }
   .img_info hr {
     margin: 40px 0;
-    border-top: 1px solid #ccc;
   }
 
   /* login */
